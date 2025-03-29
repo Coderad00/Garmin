@@ -1,0 +1,9 @@
+project.manifest = manifest.xml
+
+# By default, use the extended code space.
+
+# Comment out the following line and uncomment line 9 to use the extended code space. Uncomment the following line and comment out line 9 to not use the extended code space.
+# base.excludeAnnotations = extendedCode
+
+# Comment out the following line and uncomment line 6 to not use the extended code space. Uncomment the following line and comment out line 6 to use the extended code space.
+base.excludeAnnotations = notExtendedCode

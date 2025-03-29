@@ -1,0 +1,20 @@
+[ @file = "/home/coderad/Garmin/wetherWatchFace/src/WeatherView.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; @symbol_usingAlias = [Ui,1,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "/home/coderad/Garmin/wetherWatchFace/src/WeatherView.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Graphics,2,13,21]; @symbol_usingAlias = [Gfx,2,25,28]; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "/home/coderad/Garmin/wetherWatchFace/src/WeatherView.mc"; @line = 4; @symbol_classdef = [WeatherView,4,6,17]; @symbol_extends<0> = [Ui,4,26,28]; @symbol_extends<1> = [View,4,29,33]; ]
+class WeatherView extends Ui.View {
+    [ @file = "/home/coderad/Garmin/wetherWatchFace/src/WeatherView.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "/home/coderad/Garmin/wetherWatchFace/src/WeatherView.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/coderad/Garmin/wetherWatchFace/src/WeatherView.mc"; @line = 6; @symbol_functiondef = [onUpdate,6,13,21]; @symbol_param<0> = [dc,6,22,24]; ]
+    function onUpdate(dc) {
+    }
+}
+[ @file = "/home/coderad/Garmin/wetherWatchFace/src/WeatherView.mc"; @line = 1; ]
+<init> {
+}

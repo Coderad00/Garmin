@@ -1,0 +1,4 @@
+<resources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    <string id="language">Fenix3 language</string>
+    <string id="greeting">Fenix3 greeting</string>
+</resources>

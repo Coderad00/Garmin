@@ -1,0 +1,15 @@
+<strings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+
+    <string id="appName">ConfigurableWatchFace</string>
+
+    <string id="colorLightGray">Light Gray</string>
+    <string id="colorWhite">White</string>
+    <string id="colorRed">Red</string>
+
+    <string id="style1">Hour Only</string>
+    <string id="style2">Hour and Minutes</string>
+    <string id="style3">Hour, Minutes and Seconds</string>
+
+    <string id="complication">$1$ $2$</string>
+
+</strings>

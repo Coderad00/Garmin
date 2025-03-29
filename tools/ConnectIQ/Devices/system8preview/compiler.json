@@ -1,0 +1,337 @@
+{
+    "alphaBlendingSupport": true,
+    "appTypes": [
+        {
+            "memoryLimit": 524288,
+            "type": "audioContentProvider"
+        },
+        {
+            "memoryLimit": 65536,
+            "type": "background"
+        },
+        {
+            "memoryLimit": 131072,
+            "type": "datafield"
+        },
+        {
+            "memoryLimit": 65536,
+            "type": "glance"
+        },
+        {
+            "memoryLimit": 786432,
+            "type": "watchApp"
+        },
+        {
+            "memoryLimit": 131072,
+            "type": "watchFace"
+        }
+    ],
+    "bitsPerPixel": 16,
+    "codePageSize": 4096,
+    "complicationIcon": {
+        "height": 45,
+        "width": 45
+    },
+    "deviceFamily": "round-454x454",
+    "deviceGroup": "Watches/Wearables",
+    "deviceId": "system8preview",
+    "deviceVersion": "c160e1c886bd1adc1b288ce40b2a9add318bc761",
+    "displayName": "System 8 Preview Device",
+    "displayType": "amoled",
+    "enhancedGraphicSupport": true,
+    "exportSupport": false,
+    "hardwarePartNumber": "010-02905-00",
+    "imageFormats": [
+        "yuv",
+        "jpg",
+        "png"
+    ],
+    "imageUrl": "https://res.garmin.com/en/products/010-02905-00/v/cf-sm.jpg",
+    "launcherIcon": {
+        "height": 65,
+        "width": 65
+    },
+    "orientation": 0,
+    "partNumbers": [
+        {
+            "connectIQVersion": "5.1.0",
+            "languages": [
+                {
+                    "code": "ara",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "bul",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "ces",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "dan",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "deu",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "dut",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "eng",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "est",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "fin",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "fre",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "gre",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "heb",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "hrv",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "hun",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "ita",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "lav",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "lit",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "nob",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "pol",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "por",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "ron",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "rus",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "slo",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "slv",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "spa",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "swe",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "tur",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "ukr",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "ind",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "zsm",
+                    "fontSet": "ww"
+                },
+                {
+                    "code": "vie",
+                    "fontSet": "apac_vie"
+                },
+                {
+                    "code": "zhs",
+                    "fontSet": "apac_twcn"
+                },
+                {
+                    "code": "zht",
+                    "fontSet": "apac_twcn"
+                },
+                {
+                    "code": "jpn",
+                    "fontSet": "apac_jpn"
+                },
+                {
+                    "code": "kor",
+                    "fontSet": "apac_kor"
+                },
+                {
+                    "code": "tha",
+                    "fontSet": "apac_tha"
+                }
+            ],
+            "number": "006-B9999-00"
+        }
+    ],
+    "resolution": {
+        "height": 454,
+        "width": 454
+    },
+    "screenRotationSupport": false,
+    "supportedAPIAnnotations": [
+        "hasAccelerometer",
+        "hasActiveCalories",
+        "hasActiveMinutes",
+        "hasFloorsClimbed",
+        "hasSleepMode",
+        "hasActionMenuSupport",
+        "hasActivityMonitoring",
+        "hasAnimation",
+        "hasEncryptionSupport",
+        "hasAnt",
+        "hasAntialiasedPrimitiveSupport",
+        "hasAntPlusBikeCadence",
+        "hasAntPlusBikeLight",
+        "hasAntPlusBikePower",
+        "hasAntPlusBikeRadar",
+        "hasAntPlusBikeSpeedCadence",
+        "hasAntPlusBikeSpeed",
+        "hasAntPlusRunningDynamics",
+        "hasAntPlusShifting",
+        "hasAntPlus",
+        "hasAppReviewSupport",
+        "hasAppBasePropertiesPersistence",
+        "hasAppBaseProperties",
+        "hasAudioContentProvider",
+        "hasBackgroundSupport",
+        "hasBacklightSupport",
+        "hasBarometerSupport",
+        "hasBatteryRemainingInDaysSupport",
+        "hasBBISupport",
+        "hasBleBondedConnection",
+        "hasBleCentralClient",
+        "hasBleLinkSupport",
+        "hasBleMailboxSupport",
+        "hasBodyBatterySupport",
+        "hasCartography",
+        "hasCelestialSupport",
+        "hasBulkDownloadSupport",
+        "hasMakeJsonRequest",
+        "hasWifiSupport",
+        "hasCommunications",
+        "hasComplicationLaunchSupport",
+        "hasComplicationSupport",
+        "hasConnectAPISupport",
+        "hasCourseSupport",
+        "hasCryptographyCipher",
+        "hasCryptographyCmac",
+        "hasCryptographyHash",
+        "hasCryptographyHmac",
+        "hasCryptographyKeyAgreement",
+        "hasCryptography",
+        "hasDatafieldAlertSupport",
+        "hasDataFieldTimerEventSupport",
+        "hasDataFields",
+        "hasDeepLinkRequestSupport",
+        "hasDeviceOnboardHeartRateSupport",
+        "hasDeviceOnboardPulseOximetrySupport",
+        "hasDisplayModeSupport",
+        "hasDownloadableFITSupport",
+        "hasDownloadablePRGSupport",
+        "hasDrawBitmap2Support",
+        "hasElevationHistory",
+        "hasFirstbeat",
+        "hasFitSupport",
+        "hasFlashlightStrobeSupport",
+        "hasFlashlightSupport",
+        "hasFontScaleSupport",
+        "hasGenericPicker",
+        "hasGeometryIterator",
+        "hasGlance",
+        "hasGlanceTheme",
+        "hasGpuSupport",
+        "hasGyroSupport",
+        "hasHeartRateHistory",
+        "hasHeartRateHistoryDeprecated",
+        "hasKpiSupport",
+        "hasLocalMoment",
+        "hasMagnetometer",
+        "hasMediaSupport",
+        "hasDividerSupport",
+        "hasMenu2",
+        "hasMenu2ThemeSupport",
+        "hasMultitaskingSupport",
+        "hasNavigationDataSupport",
+        "hasPersistedContentSupport",
+        "hasPersistedLocations",
+        "hasPositionSupport",
+        "hasPowerSupport",
+        "hasPressureHistory",
+        "hasProgressBar",
+        "hasPulseOximetryHistory",
+        "hasPulseOximetrySupport",
+        "hasRespirationRateSupport",
+        "hasRestingHeartRateSupport",
+        "hasSensorDataSupport",
+        "hasSensorHistory",
+        "hasSensorLogging",
+        "hasSensorSupport",
+        "hasSettingsSupport",
+        "hasShiftingSupport",
+        "hasStressDataSupport",
+        "hasStressScoreSupport",
+        "hasSwimSupport",
+        "hasTemperatureHistory",
+        "hasTextPicker",
+        "hasTimeToRecoverySupport",
+        "hasToastSupport",
+        "hasToneSupport",
+        "hasTransparentProgressBarSupport",
+        "hasVectorFontSupport",
+        "hasUiDragSupport",
+        "hasUiMomentumSupport",
+        "hasUiVerticalMomentumSupport",
+        "hasVibeSupport",
+        "hasViewLoopSupport",
+        "hasVO2MaxSupport",
+        "hasWatchAppTimerEventSupport",
+        "hasWatchApp",
+        "hasWatchFace",
+        "hasWaypointSupport",
+        "hasWeatherSupport",
+        "hasWorkoutStepSupport",
+        "hasWorkoutSupport"
+    ],
+    "worldWidePartNumber": "006-B9999-00"
+}

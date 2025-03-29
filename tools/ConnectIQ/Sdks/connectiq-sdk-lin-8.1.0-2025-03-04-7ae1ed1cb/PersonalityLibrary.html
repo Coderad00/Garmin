@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Personality UI</title>
+    <meta name="author" content="Garmin International"/>
+    <meta name="date" content="February 28, 2023"/>
+    <link type="text/css" rel="stylesheet" href="resources/programmers-guide/style.css"/>
+    <meta name="copyright" content="Introduction to Monkey C version 3.2, Copyright 2020 Garmin, International."/>
+</head>
+<body>
+
+<link href="resources/programmers-guide/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
+
+<script src="resources/programmers-guide/jquery-1.11.3.min.js"></script>
+
+<script>
+    $(document).ready( function() {
+        $( 'pre' ).addClass( 'prettyprint' );
+    } );
+</script>
+
+<script src="resources/programmers-guide/google-code-prettify/run_prettify.js"></script>
+
+<div id="connect_iq_logo">
+
+<figure>
+<img src="resources/programmers-guide/connect_iq_logo.png" style="max-width:471px;" title="Powered by Garmin" />
+</figure>
+
+</div>
+
+<div id="title">Personality UI</div>
+<div id="tagline">Adding Personality to Connect IQ Apps</div>
+<div class="clear"></div>
+<h1 id="tableofcontents">Table of Contents</h1><div id="toc"><ul><li><a href="#personalityui">Personality UI</a></li><ul><li><a href="#monkeystyle">Monkey Style</a></li><li><a href="#personalitycomponents">Personality Components</a></li><li><a href="#howtoreadthisguide">How to Read this Guide</a></li><li><a href="#componentoverview">Component Overview</a></li></ul><li><a href="#color">Color</a></li><ul><li><a href="#usingcolorselectors">Using Color Selectors</a></li><li><a href="#lightanddarkthemes">Light and Dark Themes</a></li><li><a href="#selectors">Selectors</a></li></ul><li><a href="#iconography">Iconography</a></li><ul><li><a href="#assetcolors">Asset Colors</a></li><li><a href="#sizingandplacement">Sizing and Placement</a></li><li><a href="#selectors-1">Selectors</a></li></ul><li><a href="#typography">Typography</a></li><ul><li><a href="#systemandnumberfonts">System and Number Fonts</a></li><li><a href="#selectors-2">Selectors</a></li></ul><li><a href="#inputhints">Input Hints</a></li><ul><li><a href="#physicalbuttonhints">Physical Button Hints</a></li><li><a href="#selectors-3">Selectors</a></li></ul><li><a href="#prompts">Prompts</a></li><ul><li><a href="#promptswithnotitle">Prompts with No Title</a></li><li><a href="#promptswithatextualtitle">Prompts with a Textual Title</a></li><li><a href="#promptswithanicontitle">Prompts with an Icon Title</a></li></ul><li><a href="#confirmations">Confirmations</a></li><ul><li><a href="#yesnoconfirmations">Yes/No Confirmations</a></li><li><a href="#deleteconfirmation">Delete Confirmation</a></li></ul><li><a href="#toasts">Toasts</a></li><ul><li><a href="#standardtoast">Standard Toast</a></li></ul><li><a href="#actionviews">Action Views</a></li><ul><li><a href="#actionmenuhint">Action Menu Hint</a></li><li><a href="#edge2022personality">Edge 2022 Personality</a></li></ul><li><a href="#pageloops">Page Loops</a></li><ul><li><a href="#activitypageloop">Activity Page Loop</a></li></ul><li><a href="#progressindicators">Progress Indicators</a></li><ul><li><a href="#percentprogressindicator">Percent Progress Indicator</a></li><li><a href="#infiniteprogressindicator">Infinite Progress Indicator</a></li></ul></ul></div><h1 class="title topictitle1" id="personalityui">Personality UI</h1><div class="body conbody">
+	 <p class="p">Each
+		Garmin® product has a unique device personality. This personality can be a combination of the industrial design, the screen technology, the inputs available, and the graphic styling of the system software. While there are often common components and patterns across
+		Garmin products, the device personality alters how the user interfaces with those components. This makes it difficult for developers to make apps that feel native to the device.
+	 </p>
+	 <p class="p">The goal of
+		<span class="ph" id="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__GUID-8317DB21-132C-4323-B59B-32CE211FE8C0">Personality UI</span> is to help you navigate these design variations by providing a style system to adapt your design language to
+		Garmin devices, along with a set of reusable components for your apps.
+	 </p>
+	 <section class="section" id="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__SECTION_1A4FE36AB5254135B7DEC980A06387F1"><h2 class="title sectiontitle" id="monkeystyle">Monkey Style</h2>
+
+		<p class="p">Monkey style is a domain-specific property language for managing style elements. It borrows heavily from CSS, but has been tailored for Monkey C. Monkey C allows developers to create style property constants that can adapt among different
+		  Garmin products.
+		</p>
+	 </section>
+	 <section class="section" id="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__SECTION_850C1EF9E7244C1D8EE1045DCC534D55"><h2 class="title sectiontitle" id="personalitycomponents">Personality Components</h2>
+
+		<p class="p">The personality components are a library of assets and monkey style definitions you can build upon when creating your apps.
+		</p>
+	 </section>
+	 <section class="section" id="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__SECTION_044518B81621485BBA68651D1873AC4E"><h2 class="title sectiontitle" id="howtoreadthisguide">How to Read this Guide</h2>
+
+		<p class="p">The components outlined in this guide use a combination of the resource system,
+		  <span class="keyword apiname">Toybox.WatchUi</span> classes, and personality selectors. Each component has a set of examples that outlines how to create it. The sample code examples are broken down with the headers listed below.
+
+		</p>
+		<table class="table" id="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_FA03C791FFC14FFEBB667637D6F95779"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
+				<tr class="row">
+				  <th class="entry" id="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1">
+					 <p class="p">Header
+					 </p>
+				  </th>
+				  <th class="entry" id="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2">
+					 <p class="p">Explanation
+					 </p>
+				  </th>
+				</tr></thead><tbody class="tbody">
+				<tr class="row">
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p">layout.xml
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p">Belongs in the layouts portion of your resource definitions.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p">menus.xml
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p">Belongs within the menus element of your resource definitions.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p">InputDelegate.mc
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p">Belongs in your input handler implementation.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p">View.mc
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p">Belongs in your view implementation.
+					 </p>
+				  </td>
+				</tr>
+			 </tbody></table>
+	 </section>
+	 <section class="section" id="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__SECTION_F71F2A0B11B643CF8583EE7E8007E574"><h2 class="title sectiontitle" id="componentoverview">Component Overview</h2>
+
+		<p class="p">
+
+		</p>
+		<table class="table" id="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
+				<tr class="row">
+				  <th class="entry" id="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__1">
+					 <p class="p">Chapter
+					 </p>
+				  </th>
+				  <th class="entry" id="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__2">
+					 <p class="p">Description
+					 </p>
+				  </th>
+				</tr></thead><tbody class="tbody">
+				<tr class="row">
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__1 ">
+					 <p class="p">Colors
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__2 ">
+					 <p class="p">Learn how colors are expressed in the design system.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__1 ">
+					 <p class="p">Iconography
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__2 ">
+					 <p class="p">Integrate system iconography into your app.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__1 ">
+					 <p class="p">Typography
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__2 ">
+					 <p class="p">Choose the appropriate font.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__1 ">
+					 <p class="p">Input Hints
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__2 ">
+					 <p class="p">Provide visual guidance to users for actions.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__1 ">
+					 <p class="p">Prompts
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__2 ">
+					 <p class="p">Provide textual information to the user.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__1 ">
+					 <p class="p">Confirmations
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__2 ">
+					 <p class="p">Ask the user if they want to proceed.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__1 ">
+					 <p class="p">Toasts
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__2 ">
+					 <p class="p">Provide a small status update.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__1 ">
+					 <p class="p">Action Views
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__2 ">
+					 <p class="p">Create pages with interactive information.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__1 ">
+					 <p class="p">Page Loops
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__2 ">
+					 <p class="p">Break information across multiple pages.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__1 ">
+					 <p class="p">Progress Indicators
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-A3836176-CA39-4BA6-865A-E8FD34E03834__TABLE_E5DDFA1FB8144F9389BF4CFEA6E15DDB__entry__2 ">
+					 <p class="p">Give the status of a long-running action.
+					 </p>
+				  </td>
+				</tr>
+			 </tbody></table>
+	 </section>
+  </div>
+<h1 class="title topictitle1" id="color">Color</h1><div class="body conbody">
+	 <p class="p">The colors chosen for the product depend on the display technology and the graphic design language for the product.
+	 </p>
+	 <section class="section" id="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__SECTION_8941C3F58A6E408DA4E8762789E66E28"><h2 class="title sectiontitle" id="usingcolorselectors">Using Color Selectors</h2>
+
+		<p class="p"><span class="ph" id="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__GUID-81AC5336-5144-4D03-A17F-156B5260C963">Personality UI</span> provides context-specific color selectors that you can use with the resource system and in your code.
+		</p>
+		<p class="p"><span class="ph emphasis" id="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__EMPHASIS_83D8FD326AF34095BB350EB74EF8AF40">Example</span>
+
+		</p>
+		<p class="p">Within layouts, combine the color with other selectors when adding layout components.
+		</p>
+		<pre class="pre codeblock java"><code class="typescript">layout.xml
+
+        &lt;!-- Prompt Title --&gt;
+        &lt;text-area text="@Strings.mainTitle" personality="
+            system_color_dark__text
+            prompt_size__title
+            prompt_loc__title
+            prompt_font__title
+        "/&gt;
+</code></pre>
+		<p class="p"><span class="ph emphasis" id="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__EMPHASIS_EB75E25AD84147A88321A31767AD0F1A">Example</span>
+		</p>
+		<p class="p">In Monkey C source, you can reference the color selector directly in code.
+		</p>
+		<pre class="pre codeblock java"><code class="typescript">View.mc
+
+import Rez.Styles;
+
+dc.setColor(
+    system_color_dark__text.color,
+    system_color_dark__text.background
+);
+</code></pre>
+	 </section>
+	 <section class="section" id="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__SECTION_26B2C67F42804C1DAFCF6F288587EED3"><h2 class="title sectiontitle" id="lightanddarkthemes">Light and Dark Themes</h2>
+
+		<img class="image" style="width:434px;" id="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__IMAGE_5F629E7FF6A64A2890A6B1CCA9246490" src="resources/personality-library/personality_ui_light_dark_modeshigh.jpg" alt="Front views of devices in light and dark modes">
+		<p class="p">Many
+		  Garmin® products have both light and dark themes. Some products allow customers to choose a theme for each activity, while others have day and night modes that determine the theme. Components in the personality design system have all of their colors documented with
+		  <code id="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__GUID-4B770DCE-37DE-4D08-9911-E999E904A713" class="typescript">color_light</code> and
+		  <code id="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__GUID-CCDD5D66-3895-4BD8-83F8-9A33EF2C011D" class="typescript">color_dark</code> selectors. On certain products, especially those with AMOLED displays, these selectors are the same.
+		</p>
+		<p class="p">If your app does not take night mode into account or does not run on products that have night mode, use only the
+		  <code id="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__GUID-5A37561F-023E-4941-948F-F04627B13BD7" class="typescript">color_dark</code> selectors.
+		</p>
+		<p class="p"><span class="ph emphasis" id="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__EMPHASIS_17B572B1E8B5423C96D598C6F03B0276">Example</span>
+		</p>
+		<pre class="pre codeblock java"><code class="typescript">drawables.xml
+
+    &lt;drawable-list id="DarkBackground"&gt;
+        &lt;shape type="rectangle" x="0" y="0" personality="
+            system_size__screen
+            system_color_dark__background
+        " /&gt;
+    &lt;/drawable-list&gt;
+</code></pre>
+		<p class="p"><span class="ph emphasis" id="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__EMPHASIS_94CC11F31591415393992F65DAE299E6">Example</span>
+
+		</p>
+		<pre class="pre codeblock java"><code class="typescript">layout.xml
+
+    &lt;!-- The Main View for our app --&gt;
+    &lt;layout id="MainLayoutDark"&gt;
+        &lt;!-- Dark Background --&gt;
+        &lt;drawable id="DarkBackground" /&gt;
+
+        &lt;!-- ActionMenu hint --&gt;
+        &lt;bitmap id="actionMenuDark" personality="
+            system_icon_dark__hint_action_menu
+            system_loc__hint_action_menu" /&gt;
+
+        &lt;!-- Prompt Title --&gt;
+        &lt;text-area text="@Strings.mainTitle" personality="
+            system_color_dark__text
+            prompt_size__title
+            prompt_loc__title
+            prompt_font__title
+        "/&gt;
+
+        &lt;!-- Prompt Body --&gt;
+        &lt;text-area text="@Strings.mainPrompt" personality="
+            system_color_dark__text
+            prompt_size__body_with_title
+            prompt_loc__body_with_title
+            prompt_font__body_with_title
+        " /&gt;
+    &lt;/layout&gt;
+</code></pre>
+		<p class="p"><span class="ph emphasis" id="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__EMPHASIS_DD2D6E3CAA0A4A9392E682425BE816BA">Example</span>
+
+
+
+
+		</p>
+		<p class="p">For performance reasons, it is faster to track the day or night mode in your own local variable rather than querying the system on every update. The following example exposes day or night mode as a theme that can be accessed by pages in the app.
+
+		</p>
+		<pre class="pre codeblock"><code class="typescript">Application.mb
+
+import Toybox.Application;
+import Toybox.Lang;
+import Toybox.System;
+import Toybox.WatchUi;
+
+
+enum Theme {
+    THEME_LIGHT,
+    THEME_DARK
+}
+
+class MyApp extends Application {
+    private var _theme as Theme;
+
+    // Theme initialization
+    public function initialize() {
+        AppBase.initialize();
+
+        // Test for night mode
+        if (Styles.device_info.hasNightMode &amp;&amp;
+            System.DeviceSettings has :isNightModeEnabled) {
+            _theme = System.getDeviceSettings().isNightModeEnabled ? THEME_DARK : THEME_LIGHT;
+        } else {
+            _theme = THEME_LIGHT;
+        }
+
+    }
+
+    // Application handler for changes in day/night mode
+    public function onNightModeChanged() {
+        // Handle a change in night mode
+        if (Styles.device_info.hasNightMode &amp;&amp;
+            System.DeviceSettings has :isNightModeEnabled) {
+            _theme = System.getDeviceSettings().isNightModeEnabled ? THEME_DARK : THEME_LIGHT;
+        } else {
+            _theme = THEME_LIGHT;
+        }
+        // Force a screen update.
+        WatchUi.requestUpdate();
+    }
+
+    // Theme accessor
+    public function getTheme() as Theme {
+        return _theme;
+    }
+
+}
+</code></pre>
+		<p class="p"><span class="ph emphasis" id="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__EMPHASIS_BAE7E7517B154064A0EB14C4673101DE">Example</span>
+		</p>
+		<p class="p">You can load different layouts based on whether your app is in day or night mode. The following example keeps track of the current mode and changes it if the theme changes.
+		</p>
+		<pre class="pre codeblock"><code class="typescript">View.mb
+
+//! View that shows the main menu for the app
+class MainView extends WatchUi.View {
+    private var _theme as Theme;
+
+    //! Constructor
+    function initialize() {
+        View.initialize();
+
+        _theme = $.getApp().getTheme();
+    }
+
+    //! Handle layout
+    function onLayout(dc as Dc) as Void {
+        _theme = $.getApp().getTheme();
+        setLayout(
+            _theme == $.THEME_DARK ?
+            Rez.Layouts.MainLayoutDark(dc) :
+            Rez.Layouts.MainLayoutLight(dc)
+        );
+    }
+
+    function onUpdate(dc as Dc) as Void {
+        if ($.getApp().getTheme() != _theme) {
+            onLayout(dc);
+        }
+        View.onUpdate(dc);
+    }
+
+}
+</code></pre>
+	 </section>
+	 <section class="section" id="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__SECTION_183DDCA63AB34FDA9CC4B390546FD331"><h2 class="title sectiontitle" id="selectors">Selectors</h2>
+
+		<table class="table" id="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
+				<tr class="row">
+				  <th class="entry" id="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1">
+					 <p class="p">Selector
+					 </p>
+				  </th>
+				  <th class="entry" id="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2">
+					 <p class="p">Context
+					 </p>
+				  </th>
+				</tr></thead><tbody class="tbody">
+				<tr class="row">
+				  <td class="entry" headers="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> system_color_light__background
+					 </p>
+					 <p class="p"> system_color_dark__background
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p">The default system background color.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> system_color_light__text
+					 </p>
+					 <p class="p"> system_color_dark__text
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p">The default system text color.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> activity_color_light__background
+					 </p>
+					 <p class="p"> activity_color_dark__background
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p">The default activity background color.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> activity_color_light__text
+					 </p>
+					 <p class="p"> activity_color_dark__text
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p">The default activity text color.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> prompt_color_light__background
+					 </p>
+					 <p class="p"> prompt_color_dark__background
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p">The default prompt background color.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> prompt_color_light__title
+					 </p>
+					 <p class="p"> prompt_color_dark__title
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p">The text color for a title string in a prompt.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> prompt_color_light__body
+					 </p>
+					 <p class="p"> prompt_color_dark__body
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p">The text color for the body text of a prompt.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> confirmation_color_light__background
+					 </p>
+					 <p class="p"> confirmation_color_dark__background
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p">The default confirmation background color.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> confirmation_color_light__body
+					 </p>
+					 <p class="p"> confirmation_color_dark__body
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-04709E67-033C-49A2-8AA5-3C5ADF86942F__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p">The default confirmation body text color.
+					 </p>
+				  </td>
+				</tr>
+			 </tbody></table>
+	 </section>
+  </div>
+<h1 class="title topictitle1" id="iconography">Iconography</h1><div class="body conbody">
+	 <p class="p">
+		Garmin® products use a common system of icons. While the intent and shape of the icons are shared across products, their visual styles are altered to match the product personality.
+	 </p>
+	 <p class="p">There is a subset of system icons in the personality library that you can integrate into your apps. Icon assets in the personality library have
+		<code id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__GUID-8EEAA05F-7DAB-49CD-9B80-17AE179EFFC6" class="typescript">icon</code> in the prefix.
+	 </p>
+	 <section class="section" id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__SECTION_B3E22C87E7AA44629246DCB866CCCDEB"><h2 class="title sectiontitle" id="assetcolors">Asset Colors</h2>
+
+		<p class="p"> Icons in the personality system have all of their colors documented with
+		  <code id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__GUID-A2BE0C85-B9A2-4187-9A7A-FA8DFB662C45" class="typescript">light</code> and
+		  <code id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__GUID-3ED59FE9-A0E9-4E15-A304-0B90857870D5" class="typescript">dark</code> selectors. On some products, especially those with AMOLED displays, these selectors are the same. If your app does not take night mode into account or does not run on products that have night mode, use only the
+		  <code id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__GUID-0AC0582D-2759-4EE2-8AB0-5366C719FC0C" class="typescript">dark</code> selectors.
+		</p>
+		<p class="p">Components may also have
+		  <code id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__GUID-76A7CA2D-3557-4A79-BBBF-375EB7CC4C43" class="typescript">positive</code> or
+		  <code id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__GUID-7D590C48-2488-47A0-8A49-0BC83E8403B2" class="typescript">destructive</code> colors to represent positive or destructive actions. Not every asset has positive or destructive variations.
+		</p>
+	 </section>
+	 <section class="section" id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__SECTION_8941C3F58A6E408DA4E8762789E66E28"><h2 class="title sectiontitle" id="sizingandplacement">Sizing and Placement</h2>
+
+		<p class="p"> The size and screen placement of icons are determined by the kind of page being made. Selectors for location have
+		  <code id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__GUID-C081B38F-C56E-4D79-8C15-D0AD682C052A" class="typescript">loc</code> in the prefix, while selectors for sizing have
+		  <code id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__GUID-BF6BBBD0-3387-4382-B35F-1F1A6E1B0F4C" class="typescript">size</code> in the prefix. By using these selectors, you can adapt your images across multiple products.
+		</p>
+		<p class="p"><span class="ph emphasis" id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__EMPHASIS_83D8FD326AF34095BB350EB74EF8AF40">Example</span>
+		</p>
+		<p class="p">The following example places the warning icon in the header of a text prompt.
+
+		</p>
+		<pre class="pre codeblock java"><code class="typescript">layout.xml
+
+    &lt;!-- Warning icon in prompt header --&gt;
+        &lt;bitmap id="warningIcon" personality="
+            system_icon_light__warning
+            prompt_loc__title_icon
+            prompt_size__title_icon
+        " /&gt;
+</code></pre>
+	 </section>
+	 <section class="section" id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__SECTION_183DDCA63AB34FDA9CC4B390546FD331"><h2 class="title sectiontitle" id="selectors-1">Selectors</h2>
+
+		<table class="table" id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779"><caption></caption><colgroup><col><col><col></colgroup><thead class="thead">
+				<tr class="row">
+				  <th class="entry" id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1">
+					 <p class="p">Selector
+					 </p>
+				  </th>
+				  <th class="entry" id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2">
+					 <p class="p">Icon
+					 </p>
+				  </th>
+				  <th class="entry" id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__3">
+					 <p class="p">Context
+					 </p>
+				  </th>
+				</tr></thead><tbody class="tbody">
+				<tr class="row">
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> system_icon_light__about
+					 </p>
+					 <p class="p"> system_icon_dark__about
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p"><span class="ph uicontrol" id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__UICONTROL_DA6D8C854801439DBEF1B93B18BCA6BF"><img class="image icon" src="resources/personality-library/personality_ui_abouthigh.svg" alt="About symbol"></span>
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__3 ">
+					 <p class="p">Use for pages with instructional information or help pages.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> system_icon_light__check
+					 </p>
+					 <p class="p"> system_icon_dark__check
+					 </p>
+					 <p class="p"> system_icon_positive__check
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p"><span class="ph uicontrol" id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__UICONTROL_9A605BB98E984416B5EF44C23903B6E0"><img class="image icon" src="resources/personality-library/vivomove_trend_savehigh.svg" alt="Save symbol"></span>
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__3 ">
+					 <p class="p">Use to present confirmation actions.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> system_icon_light__cancel
+					 </p>
+					 <p class="p"> system_icon_dark__cancel
+					 </p>
+					 <p class="p"> system_icon_destructive__cancel
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p"><span class="ph uicontrol" id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__GUID-05A8D6A1-40DA-4760-ABA0-236254376AC0"><img class="image icon" src="resources/personality-library/vivomove_trend_cancel_xhigh.svg" alt="Exit symbol"></span>
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__3 ">
+					 <p class="p">Use to present cancellation actions.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> system_icon_light__discard
+					 </p>
+					 <p class="p"> system_icon_dark__discard
+					 </p>
+					 <p class="p"> system_icon_destructive__discard
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p"><span class="ph uicontrol" id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__UICONTROL_0CD3BE2A3AEC4F2797416802B23E0E2A"><img class="image icon" src="resources/personality-library/vivomove_trend_deletehigh.svg" alt="Delete symbol"></span>
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__3 ">
+					 <p class="p">Use to identify actions that involve discarding recorded information.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> system_icon_light__question
+					 </p>
+					 <p class="p"> system_icon_dark__question
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p"><span class="ph uicontrol" id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__UICONTROL_28C9D281F9BC447FA9C66371A43F96F6"><img class="image icon" src="resources/personality-library/personality_ui_questionhigh.svg" alt="Question symbol"></span>
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__3 ">
+					 <p class="p">Use on pages where the user must answer a query.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> system_icon_light__revert
+					 </p>
+					 <p class="p"> system_icon_dark__revert
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p"><span class="ph uicontrol" id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__GUID-4CD4DA64-9FF8-47C3-9B01-4128E2F24AD6"><img class="image icon" src="resources/personality-library/personality_ui_undohigh.svg" alt="Undo symbol"></span>
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__3 ">
+					 <p class="p">Use to indicate actions that undo or revert previous actions.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> system_icon_light__save
+					 </p>
+					 <p class="p"> system_icon_dark__save
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p"><span class="ph uicontrol" id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__UICONTROL_F84F0D0601A645968B012998579AB205"><img class="image icon" src="resources/personality-library/personality_ui_savehigh.svg" alt="Save symbol"></span>
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__3 ">
+					 <p class="p">Use to identify actions where information is saved.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> system_icon_light__search
+					 </p>
+					 <p class="p"> system_icon_dark__search
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p"><span class="ph uicontrol" id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__UICONTROL_91066A37769141E9BFD01F1689568DF8"><img class="image icon" src="resources/personality-library/personality_ui_searchhigh.svg" alt="Search symbol"></span>
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__3 ">
+					 <p class="p">Use to highlight query or browse actions.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> system_icon_light__warning
+					 </p>
+					 <p class="p"> system_icon_dark__warning
+					 </p>
+					 <p class="p"> system_icon_destructive__warning
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p"><span class="ph uicontrol" id="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__UICONTROL_F2F7CA46ECDC46828076FE1FD54B1A13"><img class="image icon" src="resources/personality-library/personality_ui_warninghigh.svg" alt="Warning symbol"></span>
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-AC446B02-15B4-487A-B4DF-037EF1EB0463__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__3 ">
+					 <p class="p">Use to warn the user of an action that can have a detrimental effect.
+					 </p>
+				  </td>
+				</tr>
+			 </tbody></table>
+	 </section>
+  </div>
+
+<h1 class="title topictitle1" id="typography">Typography</h1><div class="body conbody"> 
+	 <p class="p">The choice of fonts used for a product are based on readability, the product's visual language, and other aesthetic considerations. 
+	 </p> 
+	 <section class="section" id="GUID-114B4F99-F752-418D-962C-63FB7DD43112__SECTION_8941C3F58A6E408DA4E8762789E66E28"><h2 class="title sectiontitle" id="systemandnumberfonts">System and Number Fonts</h2> 
+		 
+		<p class="p">Garmin® products typically have two sets of fonts. The system font is used for textural information, while the number font is used for numeric information. Each font has a set of sizes available. The device reference outlines the available fonts on each product. 
+		</p> 
+		<p class="p">The font selectors in the layout system map out the fonts available for each usage context. The selector typically provides the font size and justification, and it relies on other selectors for color, position, and bounding area. 
+		</p> 
+		<p class="p"><span class="ph emphasis" id="GUID-114B4F99-F752-418D-962C-63FB7DD43112__EMPHASIS_83D8FD326AF34095BB350EB74EF8AF40">Example</span> 
+		</p> 
+		<p class="p">The following example describes the body text displayed in a prompt with a title. 
+		</p> 
+		<pre class="pre codeblock java"><code class="typescript">layout.xml
+
+        &lt;!-- Prompt body --&gt;
+        &lt;text-area text="@Strings.warningPrompt" personality="
+            prompt_color_dark__body
+            prompt_size__body_with_title
+            prompt_loc__body_with_title
+            prompt_font__body_with_title
+        " /&gt;
+</code></pre> 
+	 </section> 
+	 <section class="section" id="GUID-114B4F99-F752-418D-962C-63FB7DD43112__SECTION_183DDCA63AB34FDA9CC4B390546FD331"><h2 class="title sectiontitle" id="selectors-2">Selectors</h2> 
+		 
+		<table class="table" id="GUID-114B4F99-F752-418D-962C-63FB7DD43112__TABLE_FA03C791FFC14FFEBB667637D6F95779"><caption></caption><colgroup><col><col></colgroup><thead class="thead"> 
+				<tr class="row"> 
+				  <th class="entry" id="GUID-114B4F99-F752-418D-962C-63FB7DD43112__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1"> 
+					 <p class="p">Selector 
+					 </p> 
+				  </th> 
+				  <th class="entry" id="GUID-114B4F99-F752-418D-962C-63FB7DD43112__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2"> 
+					 <p class="p">Context 
+					 </p> 
+				  </th> 
+				</tr></thead><tbody class="tbody"> 
+				<tr class="row">
+				  <td class="entry" headers="GUID-114B4F99-F752-418D-962C-63FB7DD43112__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> confirmation_font__body 
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-114B4F99-F752-418D-962C-63FB7DD43112__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p">The font for the body text in a confirmation. 
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row"> 
+				  <td class="entry" headers="GUID-114B4F99-F752-418D-962C-63FB7DD43112__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 "> 
+					 <p class="p"> prompt_font__title 
+					 </p> 
+				  </td> 
+				  <td class="entry" headers="GUID-114B4F99-F752-418D-962C-63FB7DD43112__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 "> 
+					 <p class="p">The font for prompt titles. 
+					 </p> 
+				  </td> 
+				</tr> 
+				<tr class="row"> 
+				  <td class="entry" headers="GUID-114B4F99-F752-418D-962C-63FB7DD43112__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 "> 
+					 <p class="p"> prompt_font__body_no_title 
+					 </p> 
+				  </td> 
+				  <td class="entry" headers="GUID-114B4F99-F752-418D-962C-63FB7DD43112__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 "> 
+					 <p class="p">The font for the body text in a prompt without a title. 
+					 </p> 
+				  </td> 
+				</tr> 
+				<tr class="row"> 
+				  <td class="entry" headers="GUID-114B4F99-F752-418D-962C-63FB7DD43112__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 "> 
+					 <p class="p"> prompt_font__body_with_title 
+					 </p> 
+				  </td> 
+				  <td class="entry" headers="GUID-114B4F99-F752-418D-962C-63FB7DD43112__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 "> 
+					 <p class="p">The font for prompts with a title string or icon. 
+					 </p> 
+				  </td> 
+				</tr> 
+			 </tbody></table> 
+	 </section> 
+  </div> 
+<h1 class="title topictitle1" id="inputhints">Input Hints</h1><div class="body conbody">
+	 <img class="image" style="width:241px" id="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__IMAGE_9CAAC0AE333C4A7E8DE16C4514873ABA" src="resources/personality-library/personality_ui_button_hintshigh.jpg" alt="Front views of devices displaying button hints">
+	 <p class="p">
+		Garmin® software follows common interaction patterns. It is important to provide guidance on a page to indicate which actions are available to the user.
+	 </p>
+	 <section class="section" id="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__SECTION_8941C3F58A6E408DA4E8762789E66E28"><h2 class="title sectiontitle" id="physicalbuttonhints">Physical Button Hints</h2>
+
+		<p class="p">On products without a touchscreen, the software should communicate to the user which buttons trigger the next steps. Button hints highlight the appropriate physical buttons to guide the user.
+		</p>
+		<p class="p"><span class="ph emphasis" id="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__EMPHASIS_83D8FD326AF34095BB350EB74EF8AF40">Example</span>
+		</p>
+		<pre class="pre codeblock java"><code class="typescript">layout.xml
+
+        &lt;!-- Left top hint --&gt;
+        &lt;bitmap id="leftTop" personality="
+            system_icon_dark__hint_button_left_top
+            system_loc__hint_button_left_top" /&gt;
+</code></pre>
+	 </section>
+	 <section class="section" id="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__SECTION_183DDCA63AB34FDA9CC4B390546FD331"><h2 class="title sectiontitle" id="selectors-3">Selectors</h2>
+
+		<div class="note note note_note" id="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__GUID-E0806D67-BEBF-448C-B60F-A4BA66F3005C"><span class="note__title">NOTE:</span>
+		  <p class="p">Not every selector is available for every product.
+		  </p>
+		</div>
+		<div class="note note note_note" id="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__NOTE_A3EB976FAE55451C89A7D83B2FDCF787"><span class="note__title">NOTE:</span>
+		  <p class="p">Hints applied to a product that does not have a button in that position will automatically be excluded when building for that product.
+		  </p>
+		</div>
+		<table class="table" id="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779"><caption></caption><colgroup><col><col style="width:100%"><col></colgroup><thead class="thead">
+				<tr class="row">
+				  <th class="entry" id="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1">
+					 <p class="p">Asset Selector
+					 </p>
+				  </th>
+				  <th class="entry" id="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2">
+					 <p class="p">Placement Selector
+					 </p>
+				  </th>
+				  <th class="entry" id="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__3">
+					 <p class="p">Context
+					 </p>
+				  </th>
+				</tr></thead><tbody class="tbody">
+				<tr class="row">
+				  <td class="entry" headers="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> system_icon_light__hint_button_left_top
+					 </p>
+					 <p class="p"> system_icon_dark__hint_button_left_top
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p"> system_loc__hint_button_left_top
+					 </p>
+					 <p class="p"> system_size__hint_button_left_top
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__3 ">
+					 <p class="p">The top-left button for a wearable with a five-button configuration.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> system_icon_light__hint_button_left_middle
+					 </p>
+					 <p class="p"> system_icon_dark__hint_button_left_middle
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p"> system_loc__hint_button_left_middle
+					 </p>
+					 <p class="p"> system_size__hint_button_left_middle
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__3 ">
+					 <p class="p">The middle-left button for a wearable with a five-button configuration.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> system_icon_light__hint_button_left_bottom
+					 </p>
+					 <p class="p"> system_icon_dark__hint_button_left_bottom
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p"> system_loc__hint_button_left_bottom
+					 </p>
+					 <p class="p"> system_size__hint_button_left_bottom
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__3 ">
+					 <p class="p">The bottom-left button for a wearable with a five-button configuration.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> system_icon_light__hint_button_right_top
+					 </p>
+					 <p class="p"> system_icon_dark__hint_button_right_top
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p"> system_loc__hint_button_right_top
+					 </p>
+					 <p class="p"> system_size__hint_button_right_top
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__3 ">
+					 <p class="p">The top-right button for a wearable with a five-button, three-button, or two-button configuration.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> system_icon_light__hint_button_right_middle
+					 </p>
+					 <p class="p"> system_icon_dark__hint_button_right_middle
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p"> system_loc__hint_button_right_middle
+					 </p>
+					 <p class="p"> system_size__hint_button_right_middle
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__3 ">
+					 <p class="p">The middle-right button for a wearable with a three-button configuration.
+					 </p>
+				  </td>
+				</tr>
+				<tr class="row">
+				  <td class="entry" headers="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__1 ">
+					 <p class="p"> system_icon_light__hint_button_right_bottom
+					 </p>
+					 <p class="p"> system_icon_dark__hint_button_right_bottom
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__2 ">
+					 <p class="p"> system_loc__hint_button_right_bottom
+					 </p>
+					 <p class="p"> system_size__hint_button_right_bottom
+					 </p>
+				  </td>
+				  <td class="entry" headers="GUID-689BFC7F-38CD-4F1A-8E59-300B861CE63B__TABLE_FA03C791FFC14FFEBB667637D6F95779__entry__3 ">
+					 <p class="p">The bottom-right button for a wearable with a five-button, three-button, or two-button configuration.
+					 </p>
+				  </td>
+				</tr>
+			 </tbody></table>
+	 </section>
+  </div>
+<h1 class="title topictitle1" id="prompts">Prompts</h1><div class="body conbody">
+	 <p class="p">A prompt is a page of textual information for the user. A prompt can be a valuable tool that provides important information. It can contain helpful tips or messages explaining why the user is unable to perform a specific action.
+
+	 </p>
+	 <section class="section" id="GUID-0C74292F-9C44-43A4-9EA1-796EFC8071B0__SECTION_8941C3F58A6E408DA4E8762789E66E28"><h2 class="title sectiontitle" id="promptswithnotitle">Prompts with No Title</h2>
+
+		<img class="image" style="width:239px" id="GUID-0C74292F-9C44-43A4-9EA1-796EFC8071B0__IMAGE_B97FD644BE984070940F618086A40DBD" src="resources/personality-library/personality_ui_prompts_no_titlehigh.jpg" alt="Front views of devices displaying a prompt with no title">
+		<p class="p">Prompts are often pages without titles that automatically disappear after a short time.
+
+		</p>
+		<p class="p"><span class="ph emphasis" id="GUID-0C74292F-9C44-43A4-9EA1-796EFC8071B0__EMPHASIS_83D8FD326AF34095BB350EB74EF8AF40">Example</span>
+		</p>
+		<pre class="pre codeblock java"><code class="typescript">layout.xml
+
+    &lt;!-- Informational Prompt --&gt;
+    &lt;layout id="InfoPromptDark" &gt;
+        &lt;!-- Dark Background --&gt;
+        &lt;drawable id="DarkBackground" /&gt;
+
+        &lt;!-- Prompt Body --&gt;
+        &lt;text-area id="mainLabel" text="@Strings.informationPrompt" personality="
+            prompt_color_dark__body
+            prompt_size__body_no_title
+            prompt_loc__body_no_title
+            prompt_font__body_no_title
+        " /&gt;
+    &lt;/layout&gt;
+</code></pre>
+	 </section>
+	 <section class="section" id="GUID-0C74292F-9C44-43A4-9EA1-796EFC8071B0__SECTION_26B2C67F42804C1DAFCF6F288587EED3"><h2 class="title sectiontitle" id="promptswithatextualtitle">Prompts with a Textual Title</h2>
+
+		<img class="image" style="width:237px" style="width:px" id="GUID-0C74292F-9C44-43A4-9EA1-796EFC8071B0__IMAGE_9E476906A6E74D3EA42B3A8F6FF49B88" src="resources/personality-library/personality_ui_prompts_with_titlehigh.jpg" alt="Front views of devices displaying a prompt with a title">
+		<p class="p">A textual title for the prompt provides additional context.
+		</p>
+		<p class="p"><span class="ph emphasis" id="GUID-0C74292F-9C44-43A4-9EA1-796EFC8071B0__EMPHASIS_94CC11F31591415393992F65DAE299E6">Example</span>
+		</p>
+		<pre class="pre codeblock java"><code class="typescript">layout.xml
+
+    &lt;!-- Informational Prompt --&gt;
+    &lt;layout id="TitlePromptDark" &gt;
+        &lt;!-- Dark Background --&gt;
+        &lt;drawable id="DarkBackground" /&gt;
+
+        &lt;!-- Prompt Title --&gt;
+        &lt;text-area id="title" text="@Strings.mainTitle" personality="
+            prompt_color_dark__title
+            prompt_size__title
+            prompt_loc__title
+            prompt_font__title
+        " /&gt;
+        &lt;!-- Prompt Body --&gt;
+        &lt;text-area id="mainLabel" text="@Strings.informationPrompt" personality="
+            prompt_color_dark__body
+            prompt_size__body_with_title
+            prompt_loc__body_with_title
+            prompt_font__body_with_title
+        " /&gt;
+    &lt;/layout&gt;
+</code></pre>
+	 </section>
+	 <section class="section" id="GUID-0C74292F-9C44-43A4-9EA1-796EFC8071B0__SECTION_F43759DDB71E4F139C27E0E8F3DC75CE"><h2 class="title sectiontitle" id="promptswithanicontitle">Prompts with an Icon Title</h2>
+
+		<img class="image" style="width:242px" id="GUID-0C74292F-9C44-43A4-9EA1-796EFC8071B0__IMAGE_10ECF16DDBBD480183A43DCFE01EC987" src="resources/personality-library/personality_ui_prompts_with_iconhigh.jpg" alt="Front views of devices displaying a prompt with an icon">
+		<p class="p">You can use an icon in place of a textual title to provide context more quickly, or with greater emphasis.
+		</p>
+		<p class="p"><span class="ph emphasis" id="GUID-0C74292F-9C44-43A4-9EA1-796EFC8071B0__EMPHASIS_AACAA8D9992348109BB8DB059771E213">Example</span>
+		</p>
+		<p class="p">The following example places a warning icon above the prompt body text.
+
+		</p>
+		<pre class="pre codeblock"><code class="typescript">layout.xml
+
+        &lt;!-- About page prompt --&gt;
+    &lt;layout id="AboutPageLight"&gt;
+        &lt;!-- Light Background --&gt;
+        &lt;drawable id="LightBackground" /&gt;
+
+        &lt;bitmap id="aboutIconLight" personality="
+            system_icon_light__about
+            prompt_loc__title_icon
+            prompt_size__title_icon
+        " /&gt;
+
+        &lt;text-area text="@Strings.aboutPrompt" personality="
+            prompt_color_light__body
+            prompt_size__body_with_title
+            prompt_loc__body_with_title
+            prompt_font__body_with_title
+        " /&gt;
+
+    &lt;/layout&gt;
+</code></pre>
+	 </section>
+  </div>
+<h1 class="title topictitle1" id="confirmations">Confirmations</h1><div class="body conbody">
+	 <p class="p"> Confirmations ask the user for a yes or no response to a question. Confirmations are usually text only. Confirmations are a useful way of adding small amounts of friction to important decisions, to make sure the user understands their significance.
+	 </p>
+	 <section class="section" id="GUID-E5BA5C83-9222-4F80-AEA6-D26C6B6E7AE1__SECTION_8941C3F58A6E408DA4E8762789E66E28"><h2 class="title sectiontitle" id="yesnoconfirmations">Yes/No Confirmations</h2>
+
+		<img class="image" style="width:242px" id="GUID-E5BA5C83-9222-4F80-AEA6-D26C6B6E7AE1__IMAGE_059E464F65104E6E93DAE7BA39157138" src="resources/personality-library/personality_ui_confirmationhigh.jpg" alt="Front views of devices displaying a yes confirmation">
+		<p class="p">A yes/no confirmation gives the user an opportunity to confirm an action.
+		</p>
+		<p class="p"><span class="ph emphasis" id="GUID-E5BA5C83-9222-4F80-AEA6-D26C6B6E7AE1__EMPHASIS_83D8FD326AF34095BB350EB74EF8AF40">Example</span>
+		</p>
+		<p class="p">The following example uses
+		  <span class="keyword apiname">WatchUi.Confirmation</span> to display a yes/no confirmation.
+
+		</p>
+		<pre class="pre codeblock java"><code class="typescript">InputDelegate.mc
+
+using Toybox.WatchUi;
+
+var message = "Continue?";
+dialog = new WatchUi.Confirmation(message);
+WatchUi.pushView(
+    dialog,
+    new ConfirmationDelegate(),
+    WatchUi.SLIDE_IMMEDIATE
+);
+</code></pre>
+	 </section>
+	 <section class="section" id="GUID-E5BA5C83-9222-4F80-AEA6-D26C6B6E7AE1__SECTION_26B2C67F42804C1DAFCF6F288587EED3"><h2 class="title sectiontitle" id="deleteconfirmation">Delete Confirmation</h2>
+
+		<img class="image" style="width:241px" id="GUID-E5BA5C83-9222-4F80-AEA6-D26C6B6E7AE1__IMAGE_73DFE720914744528678FF168865B0AF" src="resources/personality-library/personality_ui_delete_confirmationhigh.jpg" alt="Front views of devices displaying a delete confirmation">
+		<p class="p">A delete confirmation asks the user to confirm whether they want to delete an item.
+		</p>
+		<p class="p"><span class="ph emphasis" id="GUID-E5BA5C83-9222-4F80-AEA6-D26C6B6E7AE1__EMPHASIS_94CC11F31591415393992F65DAE299E6">Example</span>
+		</p>
+		<p class="p"><span class="keyword apiname">WatchUi.Confirmation</span> does not support delete confirmations, but you can build your own confirmation using selectors.
+
+		</p>
+		<pre class="pre codeblock java"><code class="typescript">layout.xml
+
+    &lt;!-- A Delete Confirmation page --&gt;
+    &lt;layout id="DeleteConfirmationPage"&gt;
+        &lt;!-- Confirm --&gt;
+        &lt;bitmap id="confirmIcon" personality="
+            confirmation_icon__hint_confirm
+            confirmation_loc__hint_confirm
+        " /&gt;
+
+        &lt;!-- Delete --&gt;
+        &lt;bitmap id="deleteIcon" personality="
+            confirmation_icon__hint_delete
+            confirmation_loc__hint_delete
+        " /&gt;
+
+        &lt;!-- Prompt body --&gt;
+        &lt;text-area text="@Strings.deletePrompt" personality="
+            confirmation_color_dark__body
+            confirmation_size__body
+            confirmation_loc__body
+            confirmation_font__body
+        " /&gt;
+
+    &lt;/layout&gt;
+</code></pre>
+		<pre class="pre codeblock java"><code class="typescript">InputDelegate.mc
+
+    function onKey(evt as KeyEvent) as Boolean {
+        if (Styles.confirmation_input__confirm has :button &amp;&amp;
+            evt.getKey() == Styles.confirmation_input__confirm.button) {
+            doConfirmAction();
+            return true;
+        } else if (Styles.confirmation_input__reject has :button &amp;&amp;
+            evt.getKey() == Styles.confirmation_input__reject.button) {
+            doRejectAction();
+            return true;
+        }
+        return false;
+    }
+
+    function onTap(evt as ClickEvent) as Boolean {
+        if (!(Styles.confirmation_input__confirm has :button) &amp;&amp;
+            $.isInRejectArea(evt.getCoordinates())) {
+            doConfirmAction();
+            return true;
+        } else if (!(Styles.confirmation_input__reject has :button) &amp;&amp;
+            $.isInRejectArea(evt.getCoordinates())) {
+            doRejectAction();
+            return true;
+        }
+        return false;
+    }
+</code></pre>
+		<pre class="pre codeblock java"><code class="typescript">Helper Functions
+
+import Rez.Styles;
+
+//! Function to see if a tap falls within the touch area for
+//! the confirm touch area.
+//! @param x X coord of tap
+//! @param y Y coord of tap
+//! @return true if tapped, false otherwise
+function isInConfirmArea(coord as Array&lt;Numeric&gt;) as Boolean {
+    if (Styles.confirmation_input__confirm has :x1 &amp;&amp;
+        Styles.confirmation_input__confirm has :y1 &amp;&amp;
+        Styles.confirmation_input__confirm has :x2 &amp;&amp;
+        Styles.confirmation_input__confirm has :y2) {
+
+        var x = coord[0];
+        var y = coord[1];
+
+        if (x &gt;= Styles.confirmation_input__confirm.x1 &amp;&amp;
+            x &lt;= Styles.confirmation_input__confirm.x2 &amp;&amp;
+            y &gt;= Styles.confirmation_input__confirm.y1 &amp;&amp;
+            y &lt;= Styles.confirmation_input__confirm.y2) {
+            return true;
+        }
+    }
+    return false;
+}
+
+//! Function to see if a tap falls within the touch area for
+//! the reject touch area.
+//! @param x X coord of tap
+//! @param y Y coord of tap
+//! @return true if tapped, false otherwise
+function isInRejectArea(coord as Array&lt;Numeric&gt;) as Boolean {
+    if (Styles.confirmation_input__reject has :x1 &amp;&amp;
+        Styles.confirmation_input__reject has :y1 &amp;&amp;
+        Styles.confirmation_input__reject has :x2 &amp;&amp;
+        Styles.confirmation_input__reject has :y2) {
+
+        var x = coord[0];
+        var y = coord[1];
+
+        if (x &gt;= Styles.confirmation_input__reject.x1 &amp;&amp;
+            x &lt;= Styles.confirmation_input__reject.x2 &amp;&amp;
+            y &gt;= Styles.confirmation_input__reject.y1 &amp;&amp;
+            y &lt;= Styles.confirmation_input__reject.y2) {
+            return true;
+        }
+    }
+    return false;
+}
+</code></pre>
+	 </section>
+  </div>
+<h1 class="title topictitle1" id="toasts">Toasts</h1><div class="body conbody"> 
+	 <p class="p">Asynchronous events can occur outside of the user's current flow. For example, GPS may establish the user's location after being enabled. When these events occur, you can use toasts to update the user without interrupting the user's current flow. Toasts are UI elements that take up a small portion of the screen and disappear after a short time. When paired with a vibration or tone, they can effectively update the user. 
+	 </p> 
+	 <section class="section" id="GUID-5373ECE0-F912-4DD8-8902-51E08C24497C__SECTION_8941C3F58A6E408DA4E8762789E66E28"><h2 class="title sectiontitle" id="standardtoast">Standard Toast</h2> 
+		 
+		<p class="p">The System 6 
+		  <span class="keyword apiname">WatchUi.showToast()</span> API provides access to the system toast. The toast can display a short text string and an icon. 
+		   
+		</p> 
+		<p class="p"><span class="ph emphasis" id="GUID-5373ECE0-F912-4DD8-8902-51E08C24497C__EMPHASIS_83D8FD326AF34095BB350EB74EF8AF40">Example</span> 
+		</p> 
+		<p class="p">Use the 
+		  <em class="ph i" id="GUID-5373ECE0-F912-4DD8-8902-51E08C24497C__GUID-E1C1F44F-DB0B-4D63-AC3B-717CC6A000EF">size__toast_icon</em> selector to scale an icon asset to the system size for a toast. 
+		   
+		</p> 
+		<pre class="pre codeblock java"><code class="typescript">drawables.xml
+
+    &lt;bitmap id="warningToastIcon" personality="
+        system_icon_destructive__warning
+        system_size__toast_icon
+    "/&gt;
+</code></pre> 
+		<pre class="pre codeblock java"><code class="typescript">InputDelegate.mc
+
+WatchUi.showToast("Lost GPS", {:icon=&gt;Rez.Drawables.warningToastIcon});
+</code></pre> 
+	 </section> 
+  </div><h1 class="title topictitle1" id="actionviews">Action Views</h1><div class="body conbody">
+	 <p class="p">Action views are screens that provide both information and a contextual menu of actions. These actions might be steps or tasks that can be performed on the visible information.
+	 </p>
+	 <section class="section" id="GUID-A7622C13-BE61-4E19-91D9-6C1A92472675__SECTION_8941C3F58A6E408DA4E8762789E66E28"><h2 class="title sectiontitle" id="actionmenuhint">Action Menu Hint</h2>
+
+		<img class="image" style="width:242px" id="GUID-A7622C13-BE61-4E19-91D9-6C1A92472675__IMAGE_D60FCA6AB63345AAA79406659DEC40A4" src="resources/personality-library/personality_ui_action_hinthigh.jpg" alt="Front views of devices displaying action hints">
+		<p class="p">Each product has a standard hint about how to access the contextual action menu.
+		</p>
+		<p class="p"><span class="ph emphasis" id="GUID-A7622C13-BE61-4E19-91D9-6C1A92472675__EMPHASIS_83D8FD326AF34095BB350EB74EF8AF40">Example</span>
+		</p>
+		<pre class="pre codeblock java"><code class="typescript">layout.xml
+
+        &lt;!-- ActionMenu hint --&gt;
+        &lt;bitmap id="actionMenu" personality="
+            system_icon_dark__hint_action_menu
+            system_loc__hint_action_menu" /&gt;
+</code></pre>
+		<p class="p">Action menus do not support iconography.
+
+		</p>
+		<p class="p"><span class="ph emphasis" id="GUID-A7622C13-BE61-4E19-91D9-6C1A92472675__EMPHASIS_001CA3DFEAF445858E21CA7AE496DF27">Example</span>
+		</p>
+		<pre class="pre codeblock java"><code class="typescript">menu.xml
+
+&lt;action-menu id="ActionMenu"&gt;
+    &lt;action-menu-item id="edit" label="@Strings.edit" /&gt;
+    &lt;action-menu-item id="dismiss" label="@Strings.dismiss" /&gt;
+&lt;/action-menu&gt;
+</code></pre>
+		<pre class="pre codeblock java"><code class="typescript">InputDelegate.mc
+
+    function onKey(evt as KeyEvent) as Boolean {
+        if (Styles.system_input__action_menu has :button &amp;&amp;
+            evt.getKey() == Styles.system_input__action_menu.button) {
+            showActionMenu();
+            return true;
+        }
+        return false;
+    }
+
+    function onTap(evt as ClickEvent) as Boolean {
+        if (!(Styles.system_input__action_menu has :button) &amp;&amp;
+            $.isInActionArea(evt.getCoordinates())) {
+            showActionMenu();
+            return true;
+        }
+        return false;
+    }
+
+    function showActionMenu() as Void{
+        WatchUi.showActionMenu(new WatchUi.ActionMenu(),
+            new MyActionMenuDelegate());
+    }
+
+</code></pre>
+		<p class="p">The
+		  <code id="GUID-A7622C13-BE61-4E19-91D9-6C1A92472675__GUID-00814437-46B2-4001-B131-8ADBFF3C620E" class="typescript">system_input__action_menu</code> will let you know if the product uses a button or a touch area to trigger the contextual information.
+
+		</p>
+		<p class="p"><span class="ph emphasis" id="GUID-A7622C13-BE61-4E19-91D9-6C1A92472675__EMPHASIS_8590913FBD694213835E83ADDE85C74C">Example</span>
+		</p>
+		<pre class="pre codeblock java"><code class="typescript">Helper: isInActionArea
+
+//! Function to see if a tap falls within the touch area for
+//! a action menu.
+//! @param x X coord of tap
+//! @param y Y coord of tap
+//! @return true if tapped, false otherwise
+function isInActionArea(coord as Array&lt;Numeric&gt;) as Boolean {
+    if (Styles.system_input__action_menu has :x1 &amp;&amp;
+        Styles.system_input__action_menu has :y1 &amp;&amp;
+        Styles.system_input__action_menu has :x2 &amp;&amp;
+        Styles.system_input__action_menu has :y2) {
+
+        var x = coord[0];
+        var y = coord[1];
+
+        if (x &gt;= Styles.system_input__action_menu.x1 &amp;&amp;
+            x &lt;= Styles.system_input__action_menu.x2 &amp;&amp;
+            y &gt;= Styles.system_input__action_menu.y1 &amp;&amp;
+            y &lt;= Styles.system_input__action_menu.y2) {
+            return true;
+        }
+    }
+    return false;
+}
+</code></pre>
+	 </section>
+	 <section class="section" id="GUID-A7622C13-BE61-4E19-91D9-6C1A92472675__SECTION_4E67133902CE4CC9A591E0362BC1B2CB"><h2 class="title sectiontitle" id="edge2022personality">Edge 2022 Personality</h2>
+
+		<p class="p">Products with the Edge 2022 personality have an optional configurable control bar that provides contextual actions. You can configure this bar to have an action menu using the
+		  <span class="keyword apiname">View.setControlBar()</span> API.
+		</p>
+		<p class="p"><span class="ph emphasis" id="GUID-A7622C13-BE61-4E19-91D9-6C1A92472675__EMPHASIS_05665A1FDDA64B83948921A642C43032">Example</span>
+		</p>
+		<pre class="pre codeblock java"><code class="typescript">View.mc
+
+        if (View has :setControlBar) {
+            setControlBar({:title=&gt;Rez.Strings.infoPrompt,
+                :leftButton=&gt;WatchUi.CONTROL_BAR_LEFT_BUTTON_BACK,
+                :rightButton=&gt;WatchUi.CONTROL_BAR_RIGHT_BUTTON_MENU
+                });
+        }
+</code></pre>
+		<p class="p">By using
+		  <code id="GUID-A7622C13-BE61-4E19-91D9-6C1A92472675__GUID-22BBB153-4EC1-4ED0-B834-A6A726DD7029" class="typescript">has</code> in the above example, you can share this code with other products.
+		</p>
+	 </section>
+  </div>
+<h1 class="title topictitle1" id="pageloops">Page Loops</h1><div class="body conbody"> 
+	 <p class="p">Page loops present the user with a set of pages containing data and insights. There are standard behaviors for moving to the next and previous pages. Advancing from the last page typically loops the user back to the first page. 
+	 </p> 
+	 <section class="section" id="GUID-D40C313E-16F7-4B09-8346-6845CFB5E9FD__SECTION_8941C3F58A6E408DA4E8762789E66E28"><h2 class="title sectiontitle" id="activitypageloop">Activity Page Loop</h2> 
+		 
+		<p class="p">One common page loop on 
+		  Garmin® products appears when the user records an activity. While the activity is in progress, the user can navigate through multiple pages of information and metrics related to it. 
+		</p> 
+		<p class="p"><span class="ph emphasis" id="GUID-D40C313E-16F7-4B09-8346-6845CFB5E9FD__EMPHASIS_83D8FD326AF34095BB350EB74EF8AF40">Example</span> 
+		</p> 
+		<p class="p">The System 6 
+		  <span class="keyword apiname">WatchUi.ViewLoop</span> can be used to handle the inputs and transitions between pages. You create a 
+		  <span class="keyword apiname">WatchUi.ViewLoopFactory</span> that feeds 
+		  <span class="keyword apiname">WatchUi.View</span> on demand. As the user selects the system input to navigate the page loop, the 
+		  <span class="keyword apiname">ViewLoop</span> handles the page transitions and displays the page indicators. You provide your own 
+		  <span class="keyword apiname">WatchUi.InputDelegate</span> for each view to handle inputs not involved with page navigation. 
+		   
+		</p> 
+		<pre class="pre codeblock java"><code class="typescript">InputDelegate.mc
+
+import Toybox.Lang;
+import Toybox.WatchUi;
+
+var loop = new WatchUi.ViewLoop(new PageLoopFactory(),
+    {:wrap =&gt; true});
+WatchUi.pushView(loop, new ViewLoopDelegate(loop), 
+    WatchUi.SLIDE_IMMEDIATE);
+</code></pre> 
+	 </section> 
+  </div><h1 class="title topictitle1" id="progressindicators">Progress Indicators</h1><div class="body conbody"> 
+	 <p class="p">At points where your app needs to perform an asynchronous operation, such as loading an update or a new view, you should indicate to the user that they need to wait. Progress indicators provide a full-page experience informing the user the process is ongoing while they wait. 
+	 </p> 
+	 <section class="section" id="GUID-1C47D9A9-54AF-408F-A8F0-FF6F7D60F678__SECTION_8941C3F58A6E408DA4E8762789E66E28"><h2 class="title sectiontitle" id="percentprogressindicator">Percent Progress Indicator</h2> 
+		 
+		<p class="p"> If you quantify the percentage or time you need to complete a process, you can use a percent progress indicator to present that progress to the user. 
+		</p> 
+		<p class="p"><span class="ph emphasis" id="GUID-1C47D9A9-54AF-408F-A8F0-FF6F7D60F678__EMPHASIS_83D8FD326AF34095BB350EB74EF8AF40">Example</span> 
+		</p> 
+		<p class="p"><span class="keyword apiname">WatchUI.ProgressBar</span> shows a progress percentage if you initialize it with a value between 0 to 100. Call 
+		  <span class="keyword apiname">ProgressBar.setProgress()</span> to update the progress displayed. 
+		   
+		</p> 
+		<pre class="pre codeblock java"><code class="typescript">InputDelegate.mc
+
+    progressBar = new WatchUi.ProgressBar(
+        "Processing...",
+        0
+    );
+    WatchUi.pushView(
+        progressBar,
+        new MyProgressDelegate(),
+        Ui.SLIDE_DOWN
+    );
+</code></pre> 
+	 </section> 
+	 <section class="section" id="GUID-1C47D9A9-54AF-408F-A8F0-FF6F7D60F678__SECTION_26B2C67F42804C1DAFCF6F288587EED3"><h2 class="title sectiontitle" id="infiniteprogressindicator">Infinite Progress Indicator</h2> 
+		 
+		<p class="p">If you do not have a known progress end point, you can use an infinite progress mode. This displays a spinning indicator to show that a task is ongoing. 
+		</p> 
+		<p class="p"><span class="ph emphasis" id="GUID-1C47D9A9-54AF-408F-A8F0-FF6F7D60F678__EMPHASIS_94CC11F31591415393992F65DAE299E6">Example</span> 
+		</p> 
+		<p class="p"><span class="keyword apiname">WatchUi.ProgressBar</span> shows a busy progress if you initialize it with a null value. 
+		</p> 
+		<pre class="pre codeblock java"><code class="typescript">InputDelegate.mc
+
+        progressBar = new WatchUi.ProgressBar(
+        "Processing...",
+        null
+    );
+    WatchUi.pushView(
+        progressBar,
+        new MyProgressDelegate(),
+        Ui.SLIDE_DOWN
+    );
+</code></pre> 
+	 </section> 
+  </div></body></html>

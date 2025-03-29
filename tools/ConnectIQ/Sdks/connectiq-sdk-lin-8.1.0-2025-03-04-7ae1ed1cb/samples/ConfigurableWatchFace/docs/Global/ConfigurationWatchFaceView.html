@@ -1,0 +1,1096 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.ConfigurationWatchFaceView </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.ConfigurationWatchFaceView";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.ConfigurationWatchFaceView</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">WatchUi.WatchFace</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    WatchUi.WatchFace
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../Global/ConfigurationWatchFaceView.html">ConfigurationWatchFaceView</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Watch face view that handles both normal and configuration modes
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+<!-- Constants -->
+<h2>Constant Summary</h2>
+<dl class="constants">
+<h3>Constant Variables</h3>
+<table class="constTable">
+    <tr>
+        <th class="constTableHeader">Type</th>
+        <th class="constTableHeader">Name</th>
+        <th class="constTableHeader">Value</th>
+        <th class="constTableHeader">Since</th>
+        <th class="constTableHeader">Description</th>
+    </tr>
+    <tr class="enumTableOdd" id="_DEFAULT_ACCENT_COLOR-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">_DEFAULT_ACCENT_COLOR</td>
+    <td class="constTableCell">Graphics.COLOR_GREEN</td>
+    <td class="constTableCell"></td>
+    <td class="constTableCell"></td>
+</tr><tr class="enumTableEven" id="_DEFAULT_BOTTOM_COMPLICATION-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">_DEFAULT_BOTTOM_COMPLICATION</td>
+    <td class="constTableCell">Complications.COMPLICATION_TYPE_STEPS</td>
+    <td class="constTableCell"></td>
+    <td class="constTableCell"></td>
+</tr><tr class="enumTableOdd" id="_DEFAULT_DATA_COLOR-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">_DEFAULT_DATA_COLOR</td>
+    <td class="constTableCell">Graphics.COLOR_WHITE</td>
+    <td class="constTableCell"></td>
+    <td class="constTableCell"></td>
+</tr><tr class="enumTableEven" id="_DEFAULT_STYLE-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">_DEFAULT_STYLE</td>
+    <td class="constTableCell">Styles.HOUR_MINUTES_SECONDS</td>
+    <td class="constTableCell"></td>
+    <td class="constTableCell"></td>
+</tr><tr class="enumTableOdd" id="_DEFAULT_TOP_COMPLICATION-const">
+    <td class="constTableCell">Type</td>
+    <td class="constTableCell">_DEFAULT_TOP_COMPLICATION</td>
+    <td class="constTableCell">Complications.COMPLICATION_TYPE_BATTERY</td>
+    <td class="constTableCell"></td>
+    <td class="constTableCell"></td>
+</tr>
+</table>
+</dl>
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#_accentColor-var" title="_accentColor (Var)"><strong>_accentColor</strong></a>  as Lang.Number
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The color for the time.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#_bottomComplicationId-var" title="_bottomComplicationId (Var)"><strong>_bottomComplicationId</strong></a>  as Complications.Id
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The bottom complication.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#_complicationColor-var" title="_complicationColor (Var)"><strong>_complicationColor</strong></a>  as Lang.Number
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The color for the complications.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#_editMode-var" title="_editMode (Var)"><strong>_editMode</strong></a>  as Lang.Boolean
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+If the view is in edit mode or not.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#_editingComplication-var" title="_editingComplication (Var)"><strong>_editingComplication</strong></a>  as Lang.Boolean
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Whether or not a complcation is being edited.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#_selectedComplication-var" title="_selectedComplication (Var)"><strong>_selectedComplication</strong></a>  as Complications.Id or <b>Null</b>
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The selected complication when editing.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#_style-var" title="_style (Var)"><strong>_style</strong></a>  as Lang.Number
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The style to display the time in.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#_styleString-var" title="_styleString (Var)"><strong>_styleString</strong></a>  as Lang.String
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The format string for the time.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#_topComplicationId-var" title="_topComplicationId (Var)"><strong>_topComplicationId</strong></a>  as Complications.Id
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The top complication.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#complicationTapped-instance_function" title="complicationTapped (Instance Function)"><strong>complicationTapped</strong></a>(drawableId as Lang.String, x as Lang.Number, y as Lang.Number)    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Determine if a complication was tapped.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getComplication-instance_function" title="getComplication (Instance Function)"><strong>getComplication</strong></a>(complication as WatchFaceConfig.ComplicationRef)    as WatchUi.ComplicationDrawableRef or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the complication drawable for the given complication reference.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getTappedComplication-instance_function" title="getTappedComplication (Instance Function)"><strong>getTappedComplication</strong></a>(x as Lang.Number, y as Lang.Number)    as <span class="type"><a href="../Global/ComplicationLocation.html#Value-module">ComplicationLocation.Value</a></span> or <b>Null</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the complication tapped at the given coordinates.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(editMode as Lang.Boolean)
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onComplicationChange-instance_function" title="onComplicationChange (Instance Function)"><strong>onComplicationChange</strong></a>(id as Complications.Id)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Callback for when a complication changes.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onLayout-instance_function" title="onLayout (Instance Function)"><strong>onLayout</strong></a>(dc as Graphics.Dc)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Load resources for the watch face.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#onUpdate-instance_function" title="onUpdate (Instance Function)"><strong>onUpdate</strong></a>(dc as Graphics.Dc)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw the watch face.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#updateComplicationText-instance_function" title="updateComplicationText (Instance Function)"><strong>updateComplicationText</strong></a>(drawableId as Lang.String, complicationId as Complications.Id)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Update the text of the complication.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#updateConfiguration-instance_function" title="updateConfiguration (Instance Function)"><strong>updateConfiguration</strong></a>(config as WatchFaceConfig.Settings, editedType as WatchUi.WatchFaceConfigType or <b>Null</b>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Update the configuration of the watch face with the given settings.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_accentColor-var" class="details">
+<h3 class="signature" id="_accentColor-var">
+
+var _accentColor  as Lang.Number
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The color for the time
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+
+</div>
+
+</dt><dt id="_bottomComplicationId-var" class="details">
+<h3 class="signature" id="_bottomComplicationId-var">
+
+var _bottomComplicationId  as Complications.Id
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The bottom complication
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+
+</div>
+
+</dt><dt id="_complicationColor-var" class="details">
+<h3 class="signature" id="_complicationColor-var">
+
+var _complicationColor  as Lang.Number
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The color for the complications
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+
+</div>
+
+</dt><dt id="_editMode-var" class="details">
+<h3 class="signature" id="_editMode-var">
+
+var _editMode  as Lang.Boolean
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+If the view is in edit mode or not
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+
+</div>
+
+</dt><dt id="_editingComplication-var" class="details">
+<h3 class="signature" id="_editingComplication-var">
+
+var _editingComplication  as Lang.Boolean
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+Whether or not a complcation is being edited
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+
+</div>
+
+</dt><dt id="_selectedComplication-var" class="details">
+<h3 class="signature" id="_selectedComplication-var">
+
+var _selectedComplication  as Complications.Id or <b>Null</b>
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The selected complication when editing
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+
+</div>
+
+</dt><dt id="_style-var" class="details">
+<h3 class="signature" id="_style-var">
+
+var _style  as Lang.Number
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The style to display the time in
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+
+</div>
+
+</dt><dt id="_styleString-var" class="details">
+<h3 class="signature" id="_styleString-var">
+
+var _styleString  as Lang.String
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The format string for the time
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+
+</div>
+
+</dt><dt id="_topComplicationId-var" class="details">
+<h3 class="signature" id="_topComplicationId-var">
+
+var _topComplicationId  as Complications.Id
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The top complication
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="complicationTapped-instance_function">
+    <strong>complicationTapped(drawableId as Lang.String, x as Lang.Number, y as Lang.Number)</strong> <span class="type"> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Determine if a complication was tapped
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">drawableId</span>
+        &mdash;
+        <div class="inline">
+<p>
+The id of the drawable to check
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">x</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x coordinate of the tap
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y coordinate of the tap
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getComplication-instance_function">
+    <strong>getComplication(complication as WatchFaceConfig.ComplicationRef)</strong> <span class="type"> as WatchUi.ComplicationDrawableRef or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the complication drawable for the given complication reference
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">complication</span>
+        &mdash;
+        <div class="inline">
+<p>
+The complication reference to get the drawable for
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getTappedComplication-instance_function">
+    <strong>getTappedComplication(x as Lang.Number, y as Lang.Number)</strong> <span class="type"> as <span class="type"><a href="../Global/ComplicationLocation.html#Value-module">ComplicationLocation.Value</a></span> or <b>Null</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the complication tapped at the given coordinates
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x coordinate of the tap
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y coordinate of the tap
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(editMode as Lang.Boolean)</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">editMode</span>
+        &mdash;
+        <div class="inline">
+<p>
+If the view is in edit mode or not
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onComplicationChange-instance_function">
+    <strong>onComplicationChange(id as Complications.Id)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Callback for when a complication changes
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">id</span>
+        &mdash;
+        <div class="inline">
+<p>
+The id of the complication that changed
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onLayout-instance_function">
+    <strong>onLayout(dc as Graphics.Dc)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Load resources for the watch face
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">dc</span>
+        &mdash;
+        <div class="inline">
+<p>
+The drawing context
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="onUpdate-instance_function">
+    <strong>onUpdate(dc as Graphics.Dc)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw the watch face
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">dc</span>
+        &mdash;
+        <div class="inline">
+<p>
+The drawing context
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="updateComplicationText-instance_function">
+    <strong>updateComplicationText(drawableId as Lang.String, complicationId as Complications.Id)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Update the text of the complication
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">drawableId</span>
+        &mdash;
+        <div class="inline">
+<p>
+The layout id of the drawable to update
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">complicationId</span>
+        &mdash;
+        <div class="inline">
+<p>
+The id of the complication to get from the system
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="updateConfiguration-instance_function">
+    <strong>updateConfiguration(config as WatchFaceConfig.Settings, editedType as WatchUi.WatchFaceConfigType or <b>Null</b>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Update the configuration of the watch face with the given settings.
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">config</span>
+        &mdash;
+        <div class="inline">
+<p>
+The settings to update the watch face with
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">editedType</span>
+        &mdash;
+        <div class="inline">
+<p>
+The type of configuration that changed. Will be null if the configuration is being initialized
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Mar 4, 2025, 8:48:57 AM
+</p>
+
+</body>

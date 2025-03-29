@@ -1,0 +1,18 @@
+{
+
+  "name": "garmin_connectiq_dev",
+  "build": {
+    "context": "..",
+    "dockerfile": "Dockerfile"
+  },
+  "postCreateCommand": "bash .devcontainer/setup-sdk.sh",
+  "extensions": [
+    "ghisguth.monkey-c"
+  ],
+  "remoteUser": "developer",
+  "runArgs": [
+    "--net=host",
+    "-e", "DISPLAY=${env:DISPLAY}",
+    "-v", "/tmp/.X11-unix:/tmp/.X11-unix"
+  ]
+}

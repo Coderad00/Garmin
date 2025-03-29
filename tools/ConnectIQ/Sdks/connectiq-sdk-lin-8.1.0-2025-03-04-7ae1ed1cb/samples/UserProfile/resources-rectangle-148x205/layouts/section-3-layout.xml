@@ -1,0 +1,6 @@
+<layout id="SectionThreeLayout" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+
+    <label id="ActivityLevelLabel" x="0" y="79" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="BirthYearLabel" x="0" y="99" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+
+</layout>

@@ -1,0 +1,669 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.ComplicationDrawable </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.ComplicationDrawable";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.ComplicationDrawable</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">WatchUi.Drawable</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    WatchUi.Drawable
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../Global/ComplicationDrawable.html">ComplicationDrawable</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Drawable that contains the complication text. This drawable is always drawn centered horizontally
+on the screen. When the drawable is being configured by the watch face editor, the (x,y) location
+must be the top left corner of the drawable.
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#_centerY-var" title="_centerY (Var)"><strong>_centerY</strong></a>  as Lang.Numeric
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The y coordinate of the center of the drawable.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#_color-var" title="_color (Var)"><strong>_color</strong></a>  as Graphics.ColorType
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The color of the text.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#_font-var" title="_font (Var)"><strong>_font</strong></a>  as Graphics.FontType
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The font to use for the text.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#_text-var" title="_text (Var)"><strong>_text</strong></a>  as Lang.String
+  </span>
+
+
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+The text to display.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#calculateTextDimensions-instance_function" title="calculateTextDimensions (Instance Function)"><strong>calculateTextDimensions</strong></a>(dc as Graphics.Dc)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Calculate the dimensions of the text.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#containsPoint-instance_function" title="containsPoint (Instance Function)"><strong>containsPoint</strong></a>(x as Lang.Number, y as Lang.Number)    as Lang.Boolean
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Check if the drawable contains the given point.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#draw-instance_function" title="draw (Instance Function)"><strong>draw</strong></a>(dc as Graphics.Dc)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Draw the complication.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getBoundingBox-instance_function" title="getBoundingBox (Instance Function)"><strong>getBoundingBox</strong></a>()    as Graphics.BoundingBox
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Get the bounding box that encapsulates the drawable.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(options as { :text as Lang.String or Lang.ResourceId, :color as Graphics.ColorType, :backgroundColor as Graphics.ColorType, :font as Graphics.FontType, :justification as Graphics.TextJustification or Lang.Number, :identifier as Lang.Object, :locX as Lang.Numeric, :locY as Lang.Numeric, :width as Lang.Numeric, :height as Lang.Numeric, :visible as Lang.Boolean })
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setColor-instance_function" title="setColor (Instance Function)"><strong>setColor</strong></a>(color as Graphics.ColorType)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the text color.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#setText-instance_function" title="setText (Instance Function)"><strong>setText</strong></a>(text as Lang.String)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Set the text to display.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_centerY-var" class="details">
+<h3 class="signature" id="_centerY-var">
+
+var _centerY  as Lang.Numeric
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The y coordinate of the center of the drawable
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+
+</div>
+
+</dt><dt id="_color-var" class="details">
+<h3 class="signature" id="_color-var">
+
+var _color  as Graphics.ColorType
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The color of the text
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+
+</div>
+
+</dt><dt id="_font-var" class="details">
+<h3 class="signature" id="_font-var">
+
+var _font  as Graphics.FontType
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The font to use for the text
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+
+</div>
+
+</dt><dt id="_text-var" class="details">
+<h3 class="signature" id="_text-var">
+
+var _text  as Lang.String
+
+</h3>
+
+
+
+<div class="docstring">
+  <div class="discussion">
+    <p>
+The text to display
+</p>
+
+
+  </div>
+</div>
+
+<div class="tags">
+
+
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="calculateTextDimensions-instance_function">
+    <strong>calculateTextDimensions(dc as Graphics.Dc)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Calculate the dimensions of the text
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">dc</span>
+        &mdash;
+        <div class="inline">
+<p>
+The drawing context
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="containsPoint-instance_function">
+    <strong>containsPoint(x as Lang.Number, y as Lang.Number)</strong> <span class="type"> as Lang.Boolean</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Check if the drawable contains the given point
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">x</span>
+        &mdash;
+        <div class="inline">
+<p>
+The x coordinate
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">y</span>
+        &mdash;
+        <div class="inline">
+<p>
+The y coordinate
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="draw-instance_function">
+    <strong>draw(dc as Graphics.Dc)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Draw the complication
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">dc</span>
+        &mdash;
+        <div class="inline">
+<p>
+The drawing context
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getBoundingBox-instance_function">
+    <strong>getBoundingBox()</strong> <span class="type"> as Graphics.BoundingBox</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Get the bounding box that encapsulates the drawable
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+    <p class="tag_title">Returns:</p>
+    <ul class="return">
+      <li>
+  <div class="inline">
+    <p>
+the bounding box for the drawable
+</p>
+
+
+  </div>
+</li>
+    </ul>
+
+
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(options as { :text as Lang.String or Lang.ResourceId, :color as Graphics.ColorType, :backgroundColor as Graphics.ColorType, :font as Graphics.FontType, :justification as Graphics.TextJustification or Lang.Number, :identifier as Lang.Object, :locX as Lang.Numeric, :locY as Lang.Numeric, :width as Lang.Numeric, :height as Lang.Numeric, :visible as Lang.Boolean })</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setColor-instance_function">
+    <strong>setColor(color as Graphics.ColorType)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the text color
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">color</span>
+        &mdash;
+        <div class="inline">
+<p>
+The text color
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="setText-instance_function">
+    <strong>setText(text as Lang.String)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Set the text to display
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">text</span>
+        &mdash;
+        <div class="inline">
+<p>
+The complication text
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Mar 4, 2025, 8:48:57 AM
+</p>
+
+</body>

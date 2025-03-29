@@ -1,0 +1,100 @@
+[ @file = "/home/coderad/Garmin/wetherWatchFace/src/Main.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [Application,1,13,24]; ]
+using Toybox.Application;
+[ @file = "/home/coderad/Garmin/wetherWatchFace/src/Main.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [WatchUi,2,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "/home/coderad/Garmin/wetherWatchFace/src/Main.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [Time,3,13,17]; ]
+using Toybox.Time;
+[ @file = "/home/coderad/Garmin/wetherWatchFace/src/Main.mc"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [Communications,4,13,27]; ]
+using Toybox.Communications;
+[ @file = "/home/coderad/Garmin/wetherWatchFace/src/Main.mc"; @line = 5; @symbol_usingdef<0> = [Toybox,5,6,12]; @symbol_usingdef<1> = [Graphics,5,13,21]; ]
+using Toybox.Graphics;
+[ @file = "/home/coderad/Garmin/wetherWatchFace/src/Main.mc"; @line = 7; @symbol_classdef = [MainApp,7,6,13]; @symbol_extends<0> = [WatchFace,7,22,31]; ]
+class MainApp extends WatchFace {
+    [ @file = "/home/coderad/Garmin/wetherWatchFace/src/Main.mc"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "/home/coderad/Garmin/wetherWatchFace/src/Main.mc"; @line = 7; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/coderad/Garmin/wetherWatchFace/src/Main.mc"; @line = 8; @symbol_functiondef = [initialize,8,13,23]; ]
+    function initialize() as Void {
+_home_coderad_Garmin_wetherWatchFace_src_Main_mc_8_26_10_4_start:
+[ "/home/coderad/Garmin/wetherWatchFace/src/Main.mc" 9 8 ]
+        symbol [ WatchFace %tmp.2 9 8 17 ];
+        %tmp.2 = getv ? :WatchFace;
+        symbol [ initialize %tmp.3 9 18 28 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_home_coderad_Garmin_wetherWatchFace_src_Main_mc_8_26_10_4_stop:
+    }
+    [ @file = "/home/coderad/Garmin/wetherWatchFace/src/Main.mc"; @line = 12; @symbol_functiondef = [onLayout,12,13,21]; @symbol_param<0> = [dc,12,22,24]; ]
+    function onLayout(dc) {
+_home_coderad_Garmin_wetherWatchFace_src_Main_mc_12_26_15_4_start:
+[ "/home/coderad/Garmin/wetherWatchFace/src/Main.mc" 14 8 ]
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 14 8 10 ];
+        symbol [ drawText %tmp.2 14 11 19 ];
+        %tmp.2 = getv function %tmp.1 :drawText;
+        %tmp.3 = 100;
+        %tmp.4 = 60;
+        symbol [ Graphics %tmp.5 14 29 37 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ FONT_XLARGE %tmp.6 14 38 49 ];
+        %tmp.6 = getv %tmp.5 :FONT_XLARGE;
+        %tmp.7 = "Loading...";
+        invoke %tmp.1 %tmp.2(%tmp.3, %tmp.4, %tmp.6, %tmp.7);
+_home_coderad_Garmin_wetherWatchFace_src_Main_mc_12_26_15_4_stop:
+    }
+    [ @file = "/home/coderad/Garmin/wetherWatchFace/src/Main.mc"; @line = 17; @symbol_functiondef = [onUpdate,17,13,21]; @symbol_param<0> = [dc,17,22,24]; ]
+    function onUpdate(dc) {
+_home_coderad_Garmin_wetherWatchFace_src_Main_mc_17_26_23_4_start:
+[ "/home/coderad/Garmin/wetherWatchFace/src/Main.mc" 18 8 ]
+        [ "_home_coderad_Garmin_wetherWatchFace_src_Main_mc_17_26_23_4_start" "_home_coderad_Garmin_wetherWatchFace_src_Main_mc_17_26_23_4_stop" ]
+        %now.1 = local;
+        symbol [ now %now.1 18 12 15 ];
+        symbol [ Time %tmp.1 18 18 22 ];
+        %tmp.1 = getm $.Toybox.Time;
+        symbol [ now %tmp.2 18 23 26 ];
+        %tmp.2 = getv function %tmp.1 :now;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %now.1 %tmp.3;
+        symbol [ now %now.1 18 12 15 ];
+[ "/home/coderad/Garmin/wetherWatchFace/src/Main.mc" 19 8 ]
+        [ "_home_coderad_Garmin_wetherWatchFace_src_Main_mc_17_26_23_4_start" "_home_coderad_Garmin_wetherWatchFace_src_Main_mc_17_26_23_4_stop" ]
+        %timeStr.2 = local;
+        symbol [ timeStr %timeStr.2 19 12 19 ];
+        %tmp.4 = lgetv %now.1;
+        symbol [ now %tmp.4 19 22 25 ];
+        symbol [ format %tmp.5 19 26 32 ];
+        %tmp.5 = getv function %tmp.4 :format;
+        %tmp.6 = "%H:%M";
+        %tmp.7 = invoke %tmp.4 %tmp.5(%tmp.6);
+        lputv %timeStr.2 %tmp.7;
+        symbol [ timeStr %timeStr.2 19 12 19 ];
+[ "/home/coderad/Garmin/wetherWatchFace/src/Main.mc" 20 8 ]
+        %tmp.8 = lgetv %dc;
+        symbol [ dc %tmp.8 20 8 10 ];
+        symbol [ clear %tmp.9 20 11 16 ];
+        %tmp.9 = getv function %tmp.8 :clear;
+        invoke %tmp.8 %tmp.9();
+[ "/home/coderad/Garmin/wetherWatchFace/src/Main.mc" 21 8 ]
+        %tmp.10 = lgetv %dc;
+        symbol [ dc %tmp.10 21 8 10 ];
+        symbol [ drawText %tmp.11 21 11 19 ];
+        %tmp.11 = getv function %tmp.10 :drawText;
+        %tmp.12 = 100;
+        %tmp.13 = 60;
+        symbol [ Graphics %tmp.14 21 29 37 ];
+        %tmp.14 = getm $.Toybox.Graphics;
+        symbol [ FONT_XLARGE %tmp.15 21 38 49 ];
+        %tmp.15 = getv %tmp.14 :FONT_XLARGE;
+        %tmp.16 = lgetv %timeStr.2;
+        symbol [ timeStr %tmp.16 21 51 58 ];
+        invoke %tmp.10 %tmp.11(%tmp.12, %tmp.13, %tmp.15, %tmp.16);
+_home_coderad_Garmin_wetherWatchFace_src_Main_mc_17_26_23_4_stop:
+    }
+}
+[ @file = "/home/coderad/Garmin/wetherWatchFace/src/Main.mc"; @line = 1; ]
+<init> {
+}

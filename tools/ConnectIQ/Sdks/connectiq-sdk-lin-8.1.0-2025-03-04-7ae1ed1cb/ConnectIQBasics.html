@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Welcome to the Jungle</title>
+	<meta name="author" content="Garmin International"/>
+	<meta name="date" content="July 10, 2020"/>
+	<link type="text/css" rel="stylesheet" href="resources/programmers-guide/style.css"/>
+	<meta name="copyright" content="Welcome to the Jungle - CIQ 3.2, Copyright 2020 Garmin, International."/>
+</head>
+<body>
+
+<link href="resources/programmers-guide/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
+<script src="resources/programmers-guide/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).ready( function() {
+        $( 'pre' ).addClass( 'prettyprint' );
+    } );
+</script>
+<script src="resources/programmers-guide/google-code-prettify/run_prettify.js"></script>
+<div id="connect_iq_logo">
+<figure>
+<img src="resources/programmers-guide/connect_iq_logo.png" style="max-width:471px;" title="Powered by Garmin" />
+</figure>
+</div>
+<div id="title">Welcome to the Jungle</div>
+<div id="tagline">Introduction to Connect IQ</div>
+<div class="clear"></div>
+
+<h1 id="tableofcontents">Table of Contents</h1>
+<div id="toc">
+
+<p>{{connect_iq_basics_toc.md}}</p>
+</div>
+
+<h1 id="welcometoconnectiq">Welcome to Connect IQ</h1>
+
+<p>Connect IQ combines three W&#8217;s:</p>
+
+<ul>
+<li><strong>Wear</strong> - Garmin devices don&#8217;t live on a desk or in a pocket. Rather, they are worn on wrists or mounted to bicycles to help our users beat yesterday. Garmin&#8217;s experience in power management, activity tracking and <a href="http://www.thisisant.com/developer/ant-plus/ant-antplus-defined/" title="What are ANT and ANT+?">ANT or ANT+</a> sensors means our users will spend more time using the products and less time charging them.</li>
+<li><strong>Where</strong> - Location awareness is at the center of our products. While they are still highly functional devices even when not paired with a smart phone, initiating this pairing process will unlock a world of new features and functions for your Garmin device.</li>
+<li><strong>Ware</strong> - Garmin&#8217;s new Connect IQ app system allows for developers to extend their apps into Garmin&#8217;s wearable ecosystem.</li>
+</ul>
+
+<p>Connect IQ products provide the best of what Garmin has to offer like beautiful design, location awareness, and efficient power management with the Connect IQ app system. Using the Connect IQ SDK, developers can create apps for Connect IQ devices and distribute them via the Connect IQ Store.</p>
+
+<p>Connect IQ apps are created in Monkey C, an object-oriented language designed for easy app development. The goal of Monkey C is to simplify the app building process, letting developers focus more on the customer and less on resource constraints. It uses reference counting to automatically clean up memory, freeing you from focusing on memory management. In addition, the resource compiler helps you import fonts and images to easily convert them between devices. If you&#8217;ve worked with dynamic languages in the past like Java&trade;, PHP, Ruby or Python&trade;, Monkey C should be very familiar.</p>
+
+<h2 id="devicesandapis">Devices and APIs</h2>
+
+<p>The problem of <em>API fragmentation</em> is a challenge for app developers. If a developer takes advantage of new APIs, newer devices with less customer penetration may be targeted. If only established APIs are used, apps may not take advantage of new capabilities.</p>
+
+<p>Garmin devices each have some differences you&#8217;ll need to account for: round screens versus square screens, touch screens versus buttons, and a different array of sensors depending on the device purpose. While the Java philosophy of &#8220;write once run anywhere&#8221; is a notable goal, creating a universal API that crosses every Garmin device would inevitably become a lowest common denominator API.</p>
+
+<p>Rather than attempting to abstract away differences in devices, Connect IQ APIs are tailored to the devices they run on. If a device has a magnetometer, the device should have available the Magnetometer API. If two devices each have a magnetometer, the API should be the same between them. If a device does not have a magnetometer, it will not provide that API.</p>
+
+<p>To see the Connect IQ compatible devices and their capabilities go to the <a href="./ReferenceGuides.html#devicereference">Device Reference</a> section .</p>
+
+<h2 id="systemversusapilevel">System versus API Level</h2>
+
+<p>Connect IQ uses two versions<a href="#fn:1" id="fnref:1" title="see footnote" class="footnote">[1]</a>: the <em>API level</em> and the <em>system number</em>.</p>
+
+<p>The <em>API level</em> is a three number (<code>major.minor.micro</code>) version that dictates the <em>potential</em> APIs that a device supports. As stated above, not every device supports every API, but if a product is at or below an API level it is guaranteed to not support an API.</p>
+
+<p>The <em>system number</em> is a single digit number that is associated with a minimum API level. The system number communicates the set of devices that meet the minimum API level.</p>
+
+<p>Products running the latest system are most likely to get API updates and bug fixes. Products not running the latest system may receive updates when necessary.</p>
+
+<h2 id="thetaoofconnectiq">The Tao of Connect IQ</h2>
+
+<p>There is a rhyme and reason behind Monkey C to make it easier for developers to support the Garmin ecosystem of products:</p>
+
+<ol>
+<li><p><strong>The developer chooses what devices to support</strong></p>
+
+<p>Connect IQ apps can run across multiple devices, but the intended devices are up to the developer. Not every device will be aimed at the markets the developer wants to target or provide the experience the developer wants to provide. The developer should not be forced to support devices they don&#8217;t want to.</p></li>
+<li><p><strong>The developer tools should help developers support multiple devices</strong></p>
+
+<p>The developer tools lessen the weight of supporting multiple devices. The Resource Compiler hides device specific palettes and orientations from the developer. It also allows per device override of resources, allowing different images, fonts, and page layouts to be specified in the resources XML. The simulator needs to expose only the APIs a particular device supports so the developer can test device support.</p></li>
+<li><p><strong>Similar devices should have similar APIs</strong></p>
+
+<p>Not all devices will be equal, but there is often commonality between them. Two different watches may have different display technologies, but they both support bitmaps, fonts, user events, <a href="http://www.thisisant.com/developer/ant-plus/ant-antplus-defined/" title="What are ANT and ANT+?">ANT/ANT+</a>, and <a href="https://en.wikipedia.org/wiki/Bluetooth_low_energy" title="Bluetooth low energy">BLE</a>. A developer writing a sports app should not have to completely rewrite their app to support multiple devices.</p></li>
+<li><p><strong>At runtime, the developer can ask what the system &#8216;has&#8217;</strong></p>
+
+<p>Connect IQ applications are dynamically linked to the system. If an app makes a reference to an API that does not exist on a particular system, the app will fail at runtime when the app references the API, not at load time like C++. This allows an app to avoid making the call by taking advantage of the &#8216;<code>has</code>&#8217; operator.</p></li>
+</ol>
+
+<h2 id="overview">Overview</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Section</th>
+	<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><a href="./ConnectIQBasics.html#gettingstarted">Getting Started</a></td>
+	<td style="text-align:left;">Step by step instructions for installing the Connect IQ tools</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./ConnectIQBasics.html#yourfirstconnectiqapp">Your First App</a></td>
+	<td style="text-align:left;">Create your first watch face using Connect IQ</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./ConnectIQBasics.html#apptypes">App Types</a></td>
+	<td style="text-align:left;">Learn about the watch face app type and what must be taken into consideration</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="gettingstarted">Getting Started</h1>
+<figure>
+<img src="./resources/programmers-guide/learning-monkey.png" style="max-width:408px;" title="What is step 3?" />
+</figure>
+
+<h2 id="theconnectiqsdkmanager">The Connect IQ SDK Manager</h2>
+
+<p>The Connect IQ SDK Manager application keeps your Connect IQ SDK and device library up to date. It will download SDK updates and new devices from the cloud as they become available.</p>
+
+<h3 id="installingtheconnectiqsdkmanager">Installing the Connect IQ SDK Manager</h3>
+
+<ol>
+<li><p>Go to <a href="https://developer.garmin.com/connect-iq/sdk">developer.garmin.com/connect-iq/sdk</a></p></li>
+<li><p>In the <strong>Install the SDK Manager</strong> section select <em>Accept &amp; Download</em></p></li>
+<li><p>Create a new folder in a convenient location</p>
+
+<ol>
+<li><strong>Windows and Linux<a href="#fn:2" id="fnref:2" title="see footnote" class="footnote">[2]</a></strong> - Copy the executable and support files to the new folder</li>
+<li><strong>Mac</strong> - Open the disk image and copy the SDK manager to the new folder</li>
+</ol></li>
+<li><p>Launch the SDK Manager. You should see the following:
+ <figure>
+ <img src="./resources/programmers-guide/sdk-manager-start.png" style="max-width:552px;" title="Launching the SDK Manager" />
+ </figure></p></li>
+<li><p>Press the <strong>Login</strong> button and enter the credentials of the Connect account:
+ <figure>
+ <img src="./resources/programmers-guide/sdk-manager-login.png" style="max-width:552px;" title="Credential entry" />
+ </figure></p></li>
+<li><p>The SDK Manager can remember your credentials or you can re-enter them every time. Select which option you prefer and press <strong>Next</strong></p></li>
+<li><p>You&#8217;ll be presented with the option of having the Connect IQ SDK update automatically, or to be notified when a new version is available. Select the option you prefer and press <strong>Next</strong>
+ <figure>
+ <img src="./resources/programmers-guide/sdk-manager-update-sdk.png" style="max-width:552px;" title="Update SDK" />
+ </figure></p></li>
+<li><p>You&#8217;ll be presented with the option of having Connect IQ devices update, or to be notified when new devices are available. If you want to update devices automatically, you can choose the types of devices you want updates for. Select the option you prefer and press <strong>Finish</strong>
+ <figure>
+ <img src="./resources/programmers-guide/sdk-manager-update-devices.png" style="max-width:552px;" title="Update devices" />
+ </figure></p></li>
+</ol>
+
+<p>The SDK Manager has two tabs: <strong>SDK</strong> and <strong>Devices</strong>. The SDK tab shows what SDKs are available. Use the <img src="./resources/programmers-guide/sdk-manager-download-button.png" style="max-width:20px" title="download"> button to download and install a SDK. Use the <img src="./resources/programmers-guide/sdk-manager-x-button.png" style="max-width:20px" title="delete"> to un-install a SDK. Use the &#8220;Use as SDK&#8221; button to set the active SDK.</p>
+<figure>
+<img src="./resources/programmers-guide/sdk-manager-sdk-tab.png" style="max-width:602px;" title="SDK tab" />
+</figure>
+
+<p>The Devices tab shows the devices available for the SDK. If a new device is available for download a <img src="./resources/programmers-guide/sdk-manager-download-button.png" style="max-width:20px" title="download"> button will appear next to it. If a device is being updated a spinner will appear next to it. Finally, the <img src="./resources/programmers-guide/sdk-manager-x-button.png" style="max-width:20px" title="delete"> can be used to remove a device.</p>
+<figure>
+<img src="./resources/programmers-guide/sdk-manager-devices-tab.png" style="max-width:602px;" title="Devices tab" />
+</figure>
+
+<h2 id="themonkeycvisualstudiocodeextension">The Monkey C Visual Studio Code Extension</h2>
+
+<p>The Monkey C extension adds support for using the Connect IQ SDK, including a syntax highlighting editor, build integration, and integrated debugger. The Monkey C extension requires <a href="https://code.visualstudio.com/docs/setup/setup-overview">Visual Studio Code</a>, the <a href="http://java.com/en/download/" title="Java JRE">Oracle Java&trade; Runtime Environment 8</a> (version 1.8.0 or higher), and Connect IQ SDK version 4.0.6 or higher.</p>
+
+<h3 id="installingthemonkeycextension">Installing the Monkey C Extension</h3>
+
+<ol>
+<li>In Visual Studio Code, go to the <em>View</em> &gt; <em>Extension</em></li>
+<li>In the Extensions Marketplace, search box type &#8220;Monkey C&#8221;</li>
+<li>Select the <em>Monkey C</em> extension from Garmin</li>
+<li>Use the <em>Install</em> button to install the extension in Visual Studio Code. This will require a restart of Visual Studio Code.</li>
+<li>After Visual Studio Code restarts, summon the command palette with <em>Ctrl + Shift + P</em> (<em>Command + Shift + P</em> on Mac)</li>
+<li>Type &#8220;Verify Installation&#8221; and select <em>Monkey C: Verify Installation</em></li>
+</ol>
+
+<h2 id="generatingadeveloperkey">Generating a Developer Key</h2>
+
+<p>The Connect IQ compiler requires a developer key to sign apps when they&#8217;re compiled and packaged. The required key must be a RSA 4096 bit private key.</p>
+
+<p><strong>Note</strong>: It&#8217;s important you keep track of the key you use to sign app packages. You will need to use the same key to sign updates to an existing app on the store. If you lose your original signing key you will not be able to update your app.</p>
+
+<h3 id="generatingakeyusingthemonkeycextension">Generating a Key Using the Monkey C Extension</h3>
+
+<p>If you have a developer key, you can set the path to it by selecting <em>File &gt; Preferences &gt; Settings &gt; Monkey C</em> and setting the <em>Monkey C: Developer Key Path</em> to your developer key. If you do not have a developer key, you can generate one using the following steps:</p>
+
+<ol>
+<li>Summon the command palette with <em>Ctrl + Shift + P</em> (<em>Command + Shift + P</em> on Mac)</li>
+<li>Type &#8220;Generate a developer key&#8221; and select <em>Monkey C: Generate a Developer Key</em></li>
+<li>Select the directory in which to save your developer key</li>
+</ol>
+
+<p>The developer key specified in the Connect IQ compiler preferences will automatically be passed to the compiler when a project is compiled.</p>
+
+<p>[linuxsupport]: Connect IQ only supports Ubuntu Linux distributions</p>
+
+<h1 id="yourfirstconnectiqapp">Your First Connect IQ App</h1>
+
+<h2 id="creatingyourfirstproject">Creating Your First Project</h2>
+
+<p>First you need to create your new project:</p>
+
+<ol>
+<li>Use <em>Ctrl + Shift + P</em> (<em>Command + Shift + P</em> on the Mac) to summon the command palette</li>
+<li>Type &#8220;New Project&#8221; and select <em>Monkey C: New Project</em><a href="#fn:3" id="fnref:3" title="see footnote" class="footnote">[3]</a></li>
+<li>When prompted with <em>Set Project Name</em> enter a name for your new project</li>
+<li>Select the project type <em>Watch Face</em></li>
+<li>Select the <em>Simple</em> template upon which the project will be based</li>
+<li>Select <em>3.2.0</em> as the minimum API level</li>
+<li>Set the parent directory for your new project</li>
+</ol>
+
+<p>Once the project is initialized, the following project elements will be created automatically:</p>
+<figure>
+<img src="./resources/programmers-guide/new_project_structure.png" style="max-width:264px;" title="The basic structure of a new Connect IQ project" />
+</figure>
+
+<dl>
+<dt>bin</dt>
+<dd>Contains binary and debug output from the app compilation</dd>
+
+<dt>resources</dt>
+<dd>Inputs to the resource compiler, such as layouts, images, fonts, and strings, and language-specific resources</dd>
+
+<dt>source</dt>
+<dd>Contains the Monkey C source files, initially broken into &#8216;App&#8217; and &#8216;View&#8217; files</dd>
+
+<dt>manifest.xml</dt>
+<dd>Application properties like the app id, the app type, and the targeted devices</dd>
+</dl>
+
+<h3 id="abouttheminimumsdkversionfield">About the Minimum SDK Version Field</h3>
+
+<p>The minimum SDK version allows you to configure device compatibility by ensuring that only devices that support, at a minimum, the SDK version you&#8217;ve selected will be enabled for your app. For example, if your app relies heavily on a feature of the <strong>2.1.x</strong> SDK, such as the <strong>Sensor History</strong> feature, you can set your minimum SDK version to <strong>2.1.x</strong> and the list of available devices will be pruned such that you cannot select an incompatible product.</p>
+
+<h3 id="editingthesupportedproducts">Editing the Supported Products</h3>
+
+<p>After creating the project, you will be presented with the project manifest, which is where metadata about your project like the name id, application id and supported products is maintained. Most of this will be auto-created by the <em>New Project</em> command, but you will need to edit the supported products:</p>
+
+<ol>
+<li>Use <em>Ctrl + Shift + P</em> (<em>Command + Shift + P</em> on the Mac) to summon the command palette</li>
+<li>Type &#8220;Edit Products&#8221; and select <em>Monkey C: Edit Products</em></li>
+<li>You will be presented with a list of all products that meet your minimum API level. Select the top checkbox to select all products or select the specific products you want to support.</li>
+</ol>
+
+<p>The manifest will update with all products.</p>
+
+<h2 id="runningtheprogram">Running the Program</h2>
+
+<p>Before running the program, make sure you have one of your source files (In the <code>source</code> folder with the <code>.mc</code> extension) open and selected in the editor.</p>
+
+<ol>
+<li>Select <em>Run &gt; Run Without Debugging</em> (<em>Command + F5</em> on Mac, <em>Ctrl + F5</em> on other platforms)</li>
+<li>You will be prompted with the list of products your application supports. Select one from the list.</li>
+</ol>
+
+<p>If all goes well the simulator will start up and the selected watch will appear:</p>
+<figure>
+<img src="./resources/programmers-guide/first_app.png" style="max-width:304px;" title="The app running in the simulator" />
+</figure>
+
+<h2 id="importinganexample">Importing an Example</h2>
+
+<p>To try one of the Connect IQ sample apps load it into Visual Studio Code:</p>
+
+<ol>
+<li><p>Click the <em>File</em> menu</p></li>
+<li><p>Select <em>Open Folder&#8230;</em></p></li>
+<li><p>Browse in the downloaded SDK <code>samples</code> folder and select the root directory of the sample to import</p></li>
+<li><p>Click <em>Select Folder</em> to complete the import</p></li>
+</ol>
+
+<h2 id="sideloadinganapp">Side Loading an App</h2>
+
+<p>The Monkey C extension provides a wizard to help developers side load an application. The wizard will create an executable (PRG) of the selected project. Here&#8217;s how to use it:</p>
+
+<ol>
+<li>Plug your device into your computer</li>
+<li>Use <em>Ctrl + Shift + P</em> (<em>Command + Shift + P</em> on the Mac) to summon the command palette</li>
+<li>In the command palette type &#8220;Build for Device&#8221; and select <em>Monkey C: Build for Device</em></li>
+<li>Select the product you wish to build for. If you are unable to choose a device for which to build (the menu appears empty), it means that there are no valid devices configured for your project. See <a href="#editingthesupportedproducts">Editing the Supported Products</a> for instructions.</li>
+<li>Choose a directory for the output and click <em>Select Folder</em></li>
+<li>In your file manager, go to the directory selected in step 4</li>
+<li>Copy the generated <code>PRG</code> files to your device&#8217;s <code>GARMIN/APPS</code> directory</li>
+</ol>
+
+<h1 id="apptypes">App Types</h1>
+<figure>
+<img src="./resources/programmers-guide/cyclist-monkey.png" style="max-width:300px;" title="He's going for top banana." />
+</figure>
+
+<p>Every Connect IQ app must identify its app type. The app type sets the use case and boundaries for the app when it runs. There are five app types available in the Connect IQ system:</p>
+
+<ul>
+<li><a href="#watchfaces">Watch Faces</a> - These are the home screen for Garmin wearables. They can be simple timepieces or complex data screens with dozens of health and fitness stats.</li>
+<li><a href="#datafields">Data Fields</a> - Data fields are plug-ins to the Garmin activity experience. They allow computation of new metrics or allow bringing new data into a workout.</li>
+<li><a href="#widgets">Widgets</a> - Widgets are mini-apps that can be launched from the home screen. They are intended to provide glanceable access to information.</li>
+<li><a href="#deviceapps">Device Apps</a> - Device apps are the most powerful app type and provide full access to the system.</li>
+<li><a href="#audiocontentproviders">Audio Content Providers</a> - Audio content providers are plug-ins to the media player on music-enabled wearables, and they provide a bridge between the media and third-party content services.</li>
+</ul>
+
+<h2 id="apisandapptypes">APIs and App Types</h2>
+
+<p>The app type defines the user context of an app. Watch faces, for example, have many constraints because they operate in low power mode. To enforce these limits, the Connect IQ Virtual Machine will limit your available APIs based on your app type.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:center;"/>
+<col style="text-align:center;"/>
+<col style="text-align:center;"/>
+<col style="text-align:center;"/>
+<col style="text-align:center;"/>
+<col style="text-align:center;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Module Name</th>
+	<th style="text-align:center;">Data Field</th>
+	<th style="text-align:center;">Watch Face</th>
+	<th style="text-align:center;">Widget</th>
+	<th style="text-align:center;">App</th>
+	<th style="text-align:center;">Audio Content Provider</th>
+	<th style="text-align:center;">API Level</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Activity.html"><code>Toybox.Activity</code></a></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/ActivityMonitor.html"><code>Toybox.ActivityMonitor</code></a>*</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/ActivityRecording.html"><code>Toybox.ActivityRecording</code></a>*</td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;">1.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Ant.html"><code>Toybox.Ant</code></a>*</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Application.html"><code>Toybox.Application</code></a></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Attention.html"><code>Toybox.Attention</code></a></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Background.html"><code>Toybox.Background</code></a>*</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">2.3.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/BluetoothLowEnergy.html"><code>Toybox.BluetoothLowEnergy</code></a>*</td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">3.1.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Communications.html"><code>Toybox.Communications</code></a>*</td>
+	<td style="text-align:center;">&#x02713;**</td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Complications.html"><code>Toybox.Complications</code></a>*</td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">4.1.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Cryptography.html"><code>Toybox.Cryptography</code></a>*</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">3.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/FitContributor.html"><code>Toybox.FitContributor</code></a>*</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.3.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Graphics.html"><code>Toybox.Graphics</code></a></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Lang.html"><code>Toybox.Lang</code></a></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Math.html"><code>Toybox.Math</code></a></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Media.html"><code>Toybox.Media</code></a></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">3.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/PersistedContent.html"><code>Toybox.PersistedContent</code></a>*</td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">2.2.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/PersistedLocations.html"><code>Toybox.PersistedLocations</code></a>*</td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Positioning.html"><code>Toybox.Positioning</code></a>*</td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Sensor.html"><code>Toybox.Sensor</code></a>*</td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/SensorHistory.html"><code>Toybox.SensorHistory</code></a>*</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">2.1.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/SensorLogging.html"><code>Toybox.SensorLogging</code></a>*</td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">2.3.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/StringUtil.html"><code>Toybox.StringUtil</code></a></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.3.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/System.html"><code>Toybox.System</code></a></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.3.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Test.html"><code>Toybox.Test</code></a></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">2.1.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Time.html"><code>Toybox.Time</code></a></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Timer.html"><code>Toybox.Timer</code></a></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/UserProfile.html"><code>Toybox.UserProfile</code></a>*</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/WatchUi.html"><code>Toybox.WatchUi</code></a></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">1.0.0</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Weather.html"><code>Toybox.Weather</code></a></td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">&#x02713;</td>
+	<td style="text-align:center;">3.2.0</td>
+</tr>
+</tbody>
+</table>
+<p class="disclaimer">
+*Requires app permission<br />
+** Communications support in data field introduced in API level 5.0.0<br/>
+</p>
+
+<p>A Toybox module requested for your app type that is outside this list will result in a <em>Symbol Not Found</em> error.</p>
+
+<h2 id="watchfaces">Watch Faces</h2>
+
+<p>Watch faces are a special application type that display on the main screen of Garmin&#8217;s wearable devices. These application types are limited some ways to allow them to have minimal impact on the device&#8217;s battery life.</p>
+
+<p>Watch faces run continuously on the device and can have the most effect on power consumption. A poorly designed watch face &mdash; one that takes too long to draw &mdash; can greatly degrade the battery life of the wearable.</p>
+
+<p>Due to these battery life concerns, watch faces have the least access to APIs in the system. They have access to graphics, bitmaps, fonts, current activity tracker status, current battery status, and the user&#8217;s activity profile. They cannot access the compass, GPS, or other sensors.</p>
+
+<p>If you use custom fonts for numeric display, use the filter option to only load the critical glyphs. This will save memory that you can use for additional graphics</p>
+
+<h3 id="watchfacesleep">Watch Face Sleep</h3>
+
+<p>Watch faces spend the majority of the time in &#8220;Sleep Mode&#8221; in this mode, execution is restricted to updates once each minute, and cannot use timers or animations. When a user raises the watch to look at it, the watch face exits sleep mode. When this occurs, the <a href="./doc/Toybox/WatchFace.html#onExitSleep-instance_function"><code>WatchFace.onExitSleep()</code></a> method is called, and updates will increase to once per second, and timers and animations are allowed until the <a href="./doc/Toybox/WatchFace.html#onEnterSleep-instance_function"><code>WatchFace.onEnterSleep()</code></a> method is called.</p>
+
+<h3 id="watchfacedelegate">Watch Face Delegate</h3>
+
+<p><em>Since API Level 2.3.0</em></p>
+
+<p>The <a href="./doc/Toybox/WatchUi/WatchFaceDelegate.html"><code>WatchUi.WatchFaceDelegate</code></a> provides input from the system to watch faces. The delegate should be returned as the second element of the array returned from <a href="./doc/Toybox/Application/AppBase.html#getInitialView-instance_function"><code>AppBase.getInitialView()</code></a> similar to input delegates for other application types. This delegate is currently only used to report power budget violations for watch faces that support every second updates. If the execution budget is exceeded over the course of a minute, the <a href="./doc/Toybox/WatchUi/WatchFaceDelegate.html#onPowerBudgetExceeded-instance_function"><code>WatchFaceDelegate.onPowerBudgetExceeded()</code></a> callback will be invoked, providing information about the execution time of the watch face, and the limit that was exceeded.</p>
+
+<h2 id="datafields">Data Fields</h2>
+
+<p>Dynamic data fields allow customers and third party developers to write additional metrics and data that will display with Garmin activities. The goal is to create a system that not only makes it easy for a user to make a quick data field based off our workout data, but also gives the developer the the ability to customize the presentation.</p>
+
+<p>Data fields can display during an already supported activity on the device. They are a great way to provide new metrics to users by performing calculations on data that is already being recorded. Data fields are integrated within existing activities, so it&#8217;s best if they appear in the same font and format as that used for the native data fields on the device. For that reason, the simple layout is best, as it will ensure your data field will have the same native look and will scale appropriately to all data screen layouts. If you would like to customize your data field, for example, by inserting a bitmap in place of a numerical value, you will need to ensure that your custom field will scale appropriately among one-field, two-field, three-field, and other layouts.</p>
+
+<h3 id="datafieldsandsimpledatafields">Data Fields and Simple Data Fields</h3>
+
+<p>The base class for data fields is <a href="./doc/Toybox/WatchUi/DataField.html"><code>WatchUi.DataField</code></a>. This class extends <a href="./doc/Toybox/WatchUi/View.html"><code>WatchUi.View</code></a>, and in many ways behaves similarly to other View objects. The <a href="./doc/Toybox/WatchUi/View.html#onUpdate-instance_function"><code>View.onUpdate()</code></a> method call will be made every time the data field needs to update.</p>
+
+<p>In Garmin activities, the user controls the data page layout; specifically, whether it displays one, two, three, or more fields. The Connect IQ data field must handle displaying in all of those layouts, and the developer can use the simulator to test their field in all layouts supported by devices.</p>
+
+<p>Many developers will only want to display a single value and not want to handle all the complexity of the drawing of a data field. In those instances, they can use a <a href="./doc/Toybox/WatchUi/SimpleDataField.html"><code>WatchUi.SimpleDataField</code></a> object. A simple data field handles the drawing of the field in multiple sizes, and only requires the developer to implement a <a href="./doc/Toybox/WatchUi/DataField.html#compute-instance_function"><code>DataField.compute()</code></a> method. The <a href="./doc/Toybox/WatchUi/DataField.html#compute-instance_function"><code>compute()</code></a> method is passed an <a href="./doc/Toybox/Activity/Info.html"><code>Activity.Info</code></a> object, which contains all current workout information.</p>
+
+<p>Use a <a href="./doc/Toybox/WatchUi/SimpleDataField.html"><code>SimpleDataField</code></a> when possible to guarantee your data field will have the native look and feel of the other Garmin Data Fields. Connect IQ will try to ensure your data displays with the best font and layout possible.</p>
+
+<p>The following is an example of a &#8220;Beers Earned&#8221; data field, which displays how many beers you have &#8220;earned&#8221; during your workout:</p>
+
+<pre><code class="typescript">using Toybox.Application;
+using Toybox.WatchUi;
+
+class BeerView extends WatchUi.SimpleField
+{
+    function initialize() {
+        units = &quot;beers&quot;;
+    }
+
+    function compute(info) {
+        return info.calories / 150; // Calories in average bottle of beer
+    }
+}
+
+class BeersEarned extends Application.AppBase
+{
+    function getInitialView() {
+        return new BeerView();
+    }
+}
+</code></pre>
+
+<h3 id="simulatingaworkout">Simulating a Workout</h3>
+
+<p>To test your data field in the simulator, feed your data field simulated data by clicking the <em>Simulation</em> menu, choose <em>FIT Data</em> and then <em>Simulate</em>. This will generate random but valid data. You can also use <em>Simulation</em> &gt; <em>FIT Data</em> &gt; <em>Playback File&#8230;</em> to simulate a workout by using a pre-recorded FIT file.</p>
+
+<h2 id="widgets">Widgets</h2>
+
+<p>Widgets are mini-apps that allow developers to provide glanceable views of information. The information may be from a cloud service, from the onboard sensors, or from other Connect IQ APIs. Widgets are launchable from a rotating carousel of pages accessible from the main screen of wearables, or from a side view on bike computers and outdoor handhelds. Unlike apps, Widgets time out after a period of inactivity and are not allowed to record activities, but they are also launchable at any time.</p>
+
+<h3 id="baseviewandthewidgetcarousel">Base View and the Widget Carousel</h3>
+
+<p>On wearable products the watch face is the home screen of the widget carousel. Users can use the up/down buttons (on button products) or up/down swipes (on touchscreen wearables) to navigate through the widgets.</p>
+
+<p>When a widget launches the initial view returned from <a href="./doc/Toybox/Application/AppBase.html#getInitialView-instance_function"><code>getInitialView()</code></a> is shown. Since they are used for widget navigation, the <a href="./doc/Toybox/WatchUi/InputHandler.html"><code>WatchUi.InputHandler</code></a> will never receive either the up/down button or up/down swipe events when the base view is shown. Any views pushed on top of the base view using <a href="./doc/Toybox/WatchUi.html#pushView-instance_function"><code>WatchUi.pushView()</code></a> will not have these input restrictions.</p>
+
+<p>The expectation for all views in the widget loop is that the system menu shows when the user performs the menu behavior. For widgets, the first item on the system menu will be to view the menu options for the widget. When the user makes that selection, your widget&#8217;s <a href="./doc/Toybox/WatchUi/BehaviorDelegate.html#onMenu-instance_function"><code>BehaviorDelegate.onMenu()</code></a> will be called.</p>
+
+<h3 id="glances">Glances</h3>
+
+<p><em>Since API Level 3.1.0</em></p>
+
+<p>The Fenix 6 moved glanceable information from a page carousel presentation to a list presentation. Each item offers a small area of real-estate to display information. If the user selects it the full widget is launched. When launched in this context, the widget base view don&#8217;t have the input restrictions regularly applied.</p>
+
+<p>Glance views run in a limited runtime space, with reduced memory and privileges and do not accept any input.</p>
+
+<p>When your widget is launched, you can check if <code>DeviceInfo</code> has <code>isGlanceModeEnabled</code> defined. If it does, you can also determine what the value is. If glance mode is enabled you can launch directly into the interactive portion of your widget. Otherwise you should launch the base view.</p>
+
+<p>See the <a href="./CoreTopics.html#glances">Glance</a> section for more information.</p>
+
+<h3 id="designingawidget">Designing a Widget</h3>
+
+<p>Your widget should be designed with both a glance and a base view. Your base view and glance should both offer a simple summary of the presented data. If the user performs a behavior (pressing the start button, touching the screen) that indicates they want more information, your widget should then push a view that allows navigation through the offered information.</p>
+
+<h2 id="deviceapps">Device Apps</h2>
+
+<p>Device apps are by far the most robust type of app available. These allow the most flexibility and customization to the app designer. They also provide the most access to the capabilities of the wearable device, such as accessing ANT+ sensors, the accelerometer and reading/recording FIT files.</p>
+
+<p>The suite of Garmin wearables are each designed to fulfill different needs and behaviors of active individuals, from endurance runners to triathletes to outdoor enthusiasts and adventurers. The core focus of these wearables centers on the recording and tracking of activities, from running to hiking to skiing. Users of the different Garmin wearables desire to track specific types of data and great care should be taken in designing your watch app to understand the needs of the user doing a particular activity or task and provide appropriate feedback, metrics and configurability to give the user the best experience.</p>
+
+<p>The initial view of the app should be a call to action. If your app represents some form of activity like hiking or weight lifting, the initial view of the app should ask to be started. Present the user with information from the sensors that make them want to hit the start button.</p>
+
+<p>Garmin commonly uses page loops to present multiple pages of information. Page loops are a carousel of pages, each one a unique view on the activity. This is a common metaphor in Garmin products and easy to implement in Connect IQ.</p>
+
+<p>When your app is presenting large amounts of text to the user, try to keep information in the center of the screen. On round screens the top and bottom of the screen provide a limited viewing area. Use the top for contextual headers, scroll arrows, and other small hints of information.</p>
+
+<h2 id="audiocontentproviders">Audio Content Providers</h2>
+
+<p>Garmin media enabled devices are designed for active lifestyle users who want to listen to music without carrying their phone on their rides, runs or other activities. The media player allows the user to listen to their music, podcasts, and audio-books on the go.</p>
+
+<p>Audio content providers function as plug-ins for the media player on media-enabled product. These apps act as bridges between music services and the Garmin media player. Audio content providers allow users to select content from a content provid.er, sync the content over Wi-Fi to the device, and listen to it</p>
+
+<p>These apps have three contexts:</p>
+
+<ol>
+<li>Playback Configuration: Allows the user to select what content they want to listen to from what they have synced</li>
+<li>Sync: The device activates Wi-Fi and allows the audio content provider to request content for later offline playback</li>
+<li>Playback: The playback experience. The audio content provider tells the media player what to play based on the user&#8217;s selection.</li>
+</ol>
+
+<p>Your app should implement an <a href="./doc/Toybox/Application/AudioContentProviderApp.html"><code>Application.AudioContentProviderApp</code></a> instead of the traditional <a href="./doc/Toybox/Application/AppBase.html"><code>Application.AppBase</code></a>. This class adds the following methods:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Method</th>
+	<th style="text-align:left;">Purpose</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Application/AudioContentProviderApp.html#getContentDelegate-instance_function"><code>AudioContentProviderApp.getContentDelegate()</code></a></td>
+	<td style="text-align:left;">Get a <a href="./doc/Toybox/Media/ContentDelegate.html"><code>Media.ContentDelegate</code></a> for use by the system to get and iterate through media content on the device.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Application/AudioContentProviderApp.html#getPlaybackConfigurationView-instance_function"><code>AudioContentProviderApp.getPlaybackConfigurationView()</code></a></td>
+	<td style="text-align:left;">Get the initial view for configuring playback. This is the main view when launched by the media player.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Application/AudioContentProviderApp.html#getProviderIconInfo-instance_function"><code>AudioContentProviderApp.getProviderIconInfo()</code></a></td>
+	<td style="text-align:left;">Get audio provider icon information.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="./doc/Toybox/Application/AppBase.html#getSyncDelegate-instance_function"><code>AppBase.getSyncDelegate()</code></a></td>
+	<td style="text-align:left;">Get a <a href="./doc/Toybox/Communications/SyncDelegate.html"><code>Communications.SyncDelegate</code></a> object that communicates sync status to the system for syncing media content to the device.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Sync Configuration has been deprecated. We recommend providing the user a mechanism to download content inside of the playback configuration.</p>
+
+<p>See the <a href="./FAQ.html#howdoicreateanaudiocontentprovider">How do I create an Audio Content Provider?</a> section for more information.</p>
+
+<div class="footnotes">
+<hr />
+<ol>
+
+<li id="fn:1">
+<p>Experienced Connect IQ developers reading this may be wondering if we are attempting to make fetch happen, and the answer is yes. You have to admit that it is pretty fetch. <a href="#fnref:1" title="return to article" class="reversefootnote">&#160;&#8617;</a></p>
+</li>
+
+<li id="fn:2">
+<p>linuxsupport <a href="#fnref:2" title="return to article" class="reversefootnote">&#160;&#8617;</a></p>
+</li>
+
+<li id="fn:3">
+<p>When using the command palette you will be tempted to type <em>Money C</em> instead of <em>Monkey C</em> which is understandable as <em>Money C</em> is Monkey C&#8217;s nom de plume in the music industry with such hits as <em>Mo&#8217; Monkeys Mo&#8217; Problems</em> and <em>Baller C Baller Do</em> <a href="#fnref:3" title="return to article" class="reversefootnote">&#160;&#8617;</a></p>
+</li>
+
+</ol>
+</div>
+
+
+</body>
+</html>

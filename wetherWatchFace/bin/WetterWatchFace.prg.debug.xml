@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="/home/coderad/Garmin/wetherWatchFace/manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="/home/coderad/Garmin/wetherWatchFace/src/WeatherView.mc" id="1" lineNum="4" parent="globals/WeatherView" pc="268435460" symbol="&lt;init&gt;"/>
+        <entry filename="/home/coderad/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="2" lineNum="8" parent="globals/WetherWatchFace" pc="268435472" symbol="&lt;init&gt;"/>
+        <entry filename="/home/coderad/Garmin/wetherWatchFace/bin/gen/006-B4257-00/source/Rez.mcgen" id="3" lineNum="7" parent="globals/Rez" pc="268435484" symbol="&lt;init&gt;"/>
+        <entry filename="/home/coderad/Garmin/wetherWatchFace/src/WeatherView.mc" id="5" lineNum="6" parent="globals/WeatherView" pc="268435504" symbol="onUpdate"/>
+        <entry filename="/home/coderad/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="6" lineNum="10" parent="globals/WetherWatchFace" pc="268435507" symbol="initialize"/>
+        <entry filename="/home/coderad/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="6" lineNum="11" parent="globals/WetherWatchFace" pc="268435509" symbol="initialize"/>
+        <entry filename="/home/coderad/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="7" lineNum="14" parent="globals/WetherWatchFace" pc="268435526" symbol="onUpdate"/>
+        <entry filename="/home/coderad/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="7" lineNum="15" parent="globals/WetherWatchFace" pc="268435529" symbol="onUpdate"/>
+        <entry filename="/home/coderad/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="7" lineNum="16" parent="globals/WetherWatchFace" pc="268435541" symbol="onUpdate"/>
+        <entry filename="/home/coderad/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="7" lineNum="18" parent="globals/WetherWatchFace" pc="268435566" symbol="onUpdate"/>
+        <entry filename="/home/coderad/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="7" lineNum="19" parent="globals/WetherWatchFace" pc="268435574" symbol="onUpdate"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry id="8388924" module="true" symbol="Gregorian"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="8" symbol="AppName"/>
+        <entry id="4" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry id="6" object="true" symbol="WetherWatchFace"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="8388645" module="true" symbol="Time"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry field="true" id="7" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="5" object="true" symbol="WeatherView"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268435594" name="dc" stackId="1" startPc="268435526"/>
+        <entry endPc="268435593" name="now" stackId="2" startPc="268435529"/>
+        <entry endPc="268435593" name="current" stackId="3" startPc="268435529"/>
+    </localVars>
+    <deviceInfo deviceVersion="0ed082a335bbf00c12e5da810e92d4f89288090c" partNumber="006-B4257-00"/>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="49" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/WeatherView" offset="107" parentId="globals" symbolId="WeatherView" type="class"/>
+        <dataEntry label="globals/WetherWatchFace" offset="160" parentId="globals" symbolId="WetherWatchFace" type="class"/>
+        <dataEntry label="globals/Rez" offset="213" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/Rez/Drawables" offset="257" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="292" parentId="Rez" symbolId="Strings" type="module"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" endPc="268435471" name="&lt;init&gt;" parent="WeatherView" startPc="268435460">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435483" name="&lt;init&gt;" parent="WetherWatchFace" startPc="268435472">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435503" name="&lt;init&gt;" parent="Rez" startPc="268435484">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="WeatherView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435506" name="onUpdate" parent="WeatherView" startPc="268435504">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435525" name="initialize" parent="WetherWatchFace" startPc="268435507">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435594" name="onUpdate" parent="WetherWatchFace" startPc="268435526">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>

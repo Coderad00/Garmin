@@ -1,0 +1,7 @@
+<resources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    <string id="AppName">ActivityTracking</string>
+    <string id="HistoryTitle">Act History</string>
+    <string id="DayHeader">Day</string>
+    <string id="FloorsHeader">Floors</string>
+    <string id="StepsHeader">Steps / Goal</string>
+</resources>

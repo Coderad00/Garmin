@@ -1,0 +1,5 @@
+<resources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    <drawable-list id="arrow" foreground="Graphics.COLOR_WHITE">
+        <shape type="polygon" points="[[260, 375],[250, 355], [270, 355]]" color="Graphics.COLOR_WHITE"/>
+    </drawable-list>
+</resources>

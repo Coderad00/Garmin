@@ -1,0 +1,360 @@
+
+<!-- Header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> $.TrueTypeFontsView </title>
+
+    <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+    <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+    <script type="text/javascript" charset="utf-8">
+      pathId = "$.TrueTypeFontsView";
+      relpath = '../';
+    </script>
+    <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+ </head>
+
+ <body>
+<div class="nav_wrap">
+  <iframe id="nav" src="../class_list.html"></iframe>
+  <div id="resizer"></div>
+</div>
+
+<div id="main" tabindex="-1">
+<iframe id="search_frame" src="../class_list.html"></iframe>
+
+
+  <div id="content"><h1>Class: $.TrueTypeFontsView</h1>
+
+  <!-- Inherits -->
+  <div class="box_info">
+    <dl>
+  <dt>Inherits:</dt>
+  <dd>
+    <span class="inheritName">WatchUi.View</span>
+    <ul class="fullTree">
+      <li class="next">
+  <div class="inline">
+    WatchUi.View
+  </div>
+</li>
+<li class="next">
+  <div class="inline">
+    <a href="../Global/TrueTypeFontsView.html">TrueTypeFontsView</a>
+  </div>
+</li>
+    </ul>
+    <a href="#" class="inheritanceTree">show all</a>
+  </dd>
+</dl>
+  </div>
+
+<h2>Overview</h2>
+<!-- Overview -->
+
+<!-- Description -->
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+The base class which remembers how many pages the view has
+and update the view id for the page to be shown in the given direction
+</p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<div class="tags">
+
+
+
+
+
+</div>
+
+  <h2>Direct Known Subclasses</h2>
+  <p class="sub_classes">
+    <span class="type"><a href="../Global/TrueTypeFontsAngledTextView.html">$.TrueTypeFontsAngledTextView</a></span>, <span class="type"><a href="../Global/TrueTypeFontsFontMappingView.html">$.TrueTypeFontsFontMappingView</a></span>, <span class="type"><a href="../Global/TrueTypeFontsRadialTextView.html">$.TrueTypeFontsRadialTextView</a></span>, <span class="type"><a href="../Global/TrueTypeFontsVectorFontsView.html">$.TrueTypeFontsVectorFontsView</a></span>
+  </p>
+
+
+
+
+
+
+<h2>Instance Member Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+<ul class="summary">
+   <li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#_deviceSettingChangedManager-var" title="_deviceSettingChangedManager (Var)"><strong>_deviceSettingChangedManager</strong></a>  as <span class="type"><a href="../Global/DeviceSettingChangedManager.html">$.DeviceSettingChangedManager</a></span>
+  </span>
+
+
+
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#_viewId-var" title="_viewId (Var)"><strong>_viewId</strong></a>  as Lang.Number
+  </span>
+
+
+
+</li><li class="public">
+  <span class="summary_signature summary_signature_link">
+    <a href="#_viewIdMax-var" title="_viewIdMax (Var)"><strong>_viewIdMax</strong></a>  as Lang.Number
+  </span>
+
+
+
+</li>
+</ul>
+
+<h2>
+   Instance Method Summary
+   <small><a href="#" class="summary_toggle">collapse</a></small>
+</h2>
+<ul class="summary">
+<li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#changePage-instance_function" title="changePage (Instance Function)"><strong>changePage</strong></a>(direction as <span class="type"><a href="../index.html#Direction-module">$.Direction</a></span>)    as <b>Void</b>
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Change the pages in the given direction.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#getFontScale-instance_function" title="getFontScale (Instance Function)"><strong>getFontScale</strong></a>()    as Lang.Float
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Retrieve the current font scale.
+</p>
+
+
+    </div>
+  </span>
+</li><li class="public">
+
+      <span class="summary_signature summary_signature_link">
+      <a href="#initialize-instance_function" title="initialize (Instance Function)"><strong>initialize</strong></a>(maxViewId as Lang.Number, deviceSettingChangedManager as <span class="type"><a href="../Global/DeviceSettingChangedManager.html">$.DeviceSettingChangedManager</a></span>)
+      </span>
+
+  <span class="summary_desc">
+    <div class="inline">
+<p>
+Constructor.
+</p>
+
+
+    </div>
+  </span>
+</li>
+</ul>
+
+
+ <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    <dt id="_deviceSettingChangedManager-var" class="details">
+<h3 class="signature" id="_deviceSettingChangedManager-var">
+
+var _deviceSettingChangedManager  as <span class="type"><a href="../Global/DeviceSettingChangedManager.html">$.DeviceSettingChangedManager</a></span>
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+
+</div>
+
+</dt><dt id="_viewId-var" class="details">
+<h3 class="signature" id="_viewId-var">
+
+var _viewId  as Lang.Number
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+
+</div>
+
+</dt><dt id="_viewIdMax-var" class="details">
+<h3 class="signature" id="_viewIdMax-var">
+
+var _viewIdMax  as Lang.Number
+
+</h3>
+
+
+
+
+<div class="tags">
+
+
+
+
+
+
+</div>
+
+</dt>
+ </div>
+
+ <div id="instance_method_details" class="method_details_list">
+  <h2>Instance Method Details</h2>
+<div class="method_details details">
+  <h3 class="signature" id="changePage-instance_function">
+    <strong>changePage(direction as <span class="type"><a href="../index.html#Direction-module">$.Direction</a></span>)</strong> <span class="type"> as <b>Void</b></span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Change the pages in the given direction
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">direction</span>
+        &mdash;
+        <div class="inline">
+<p>
+The direction
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="getFontScale-instance_function">
+    <strong>getFontScale()</strong> <span class="type"> as Lang.Float</span>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Retrieve the current font scale
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+
+
+
+
+
+
+
+
+  </div>
+</div><div class="method_details details">
+  <h3 class="signature" id="initialize-instance_function">
+    <strong>initialize(maxViewId as Lang.Number, deviceSettingChangedManager as <span class="type"><a href="../Global/DeviceSettingChangedManager.html">$.DeviceSettingChangedManager</a></span>)</strong>
+  </h3>
+
+  <div class="docstring">
+    <div class="discussion">
+      <p>
+Constructor
+</p>
+
+
+    </div>
+  </div>
+
+  <div class="tags">
+    <p class="tag_title">Parameters:</p>
+    <ul class="param">
+      <li>
+        <span class="name">maxViewId</span>
+        &mdash;
+        <div class="inline">
+<p>
+The maximum view Id
+</p>
+
+
+        </div>
+    </li><li>
+        <span class="name">deviceSettingChangedManager</span>
+        &mdash;
+        <div class="inline">
+<p>
+the DeviceSettingChangedManager instance
+</p>
+
+
+        </div>
+    </li>
+    </ul>
+
+
+
+
+
+
+
+
+  </div>
+</div>
+</div>
+</div>
+
+<hr/>
+
+<p class="signature">
+Generated Mar 4, 2025, 8:49:35 AM
+</p>
+
+</body>

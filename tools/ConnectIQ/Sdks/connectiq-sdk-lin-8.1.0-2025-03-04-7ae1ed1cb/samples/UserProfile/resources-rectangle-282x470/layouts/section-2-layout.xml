@@ -1,0 +1,8 @@
+<layout id="SectionTwoLayout" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+
+    <label id="SleepTimeLabel" x="10" y="170" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="RunStepLengthLabel" x="10" y="190" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="WalkStepLengthLabel" x="10" y="210" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+    <label id="RestingHeartRateLabel" x="10" y="230" font="Graphics.FONT_MEDIUM" justification="Graphics.TEXT_JUSTIFY_LEFT" />
+
+</layout>
