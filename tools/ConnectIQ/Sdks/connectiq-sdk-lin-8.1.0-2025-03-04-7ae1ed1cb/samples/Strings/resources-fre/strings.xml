@@ -1,6 +1,0 @@
-<resources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
-    <string id="language">French</string>
-    <string id="greeting">bonjour</string>
-    <string id="food">les oeufs</string>
-    <string id="drink">le lait</string>
-</resources>

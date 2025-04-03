@@ -1,8 +1,0 @@
-<resources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
-    <string id="AppName">MO2Display</string>
-    <string id="sessionName">MO2</string>
-    <string id="fitFieldName">MO2</string>
-    <string id="fitChartLabel">Muscle Oxygen</string>
-    <string id="fitDataLabel">Total Hemoglobin Concentration</string>
-    <string id="fitUnitsLabel">g/dl</string>
-</resources>

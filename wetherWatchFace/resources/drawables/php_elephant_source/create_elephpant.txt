@@ -1,0 +1,15 @@
+ANLEITUNG: PHP-ELEFANT BILD ERSTELLEN
+
+1. Erstelle ein Bild eines PHP-Elefanten (ElePHPant) mit einem transparenten oder schwarzen Hintergrund.
+   - Optimale Größe: ca. 200x200 Pixel
+   - Empfohlenes Format: PNG mit Transparenz
+   - Der Hintergrund muss schwarz sein
+
+2. Benenne das Bild "php_elephant.png"
+
+3. Speichere das Bild im Verzeichnis: wetherWatchFace/resources/drawables/
+
+4. Achte darauf, dass das Bild nicht zu groß ist (unter 100KB), da Garmin-Geräte begrenzte Ressourcen haben.
+
+Tipp: Wenn du keinen passenden Elefanten findest, kannst du auf GitHub nach "elephpant png" suchen oder
+auf der offiziellen PHP-Website nachsehen. Vergiss nicht, die Urheberrechte zu beachten. 

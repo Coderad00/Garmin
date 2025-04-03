@@ -2,4 +2,5 @@
   <string id="AppName">Wetter-Watchface</string>
   <string id="LoadingWeather">Wetter wird geladen...</string>
   <string id="Steps">Schritte</string>
-</strings>
+  <string id="ElephantHint">PHP-Elefant fehlt! Bitte füge php_elephant.png hinzu.</string>
+</strings> 

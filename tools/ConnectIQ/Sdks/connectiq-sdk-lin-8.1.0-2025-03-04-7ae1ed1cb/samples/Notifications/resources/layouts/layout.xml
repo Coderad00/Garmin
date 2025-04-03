@@ -1,6 +1,0 @@
-<layout id="mainLayout" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
-    <text-area id="text" text="@Strings.initialPrompt" personality="prompt_color_dark__body
-                                                                    prompt_font__body_no_title
-                                                                    prompt_loc__body_no_title
-                                                                    prompt_size__body_no_title" />
-</layout>

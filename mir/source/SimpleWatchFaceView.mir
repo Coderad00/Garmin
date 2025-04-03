@@ -1,0 +1,148 @@
+[ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [WatchUi,1,13,20]; ]
+using Toybox.WatchUi;
+[ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [Graphics,2,13,21]; ]
+using Toybox.Graphics;
+[ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [System,3,13,19]; ]
+using Toybox.System;
+[ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc"; @line = 4; @symbol_usingdef<0> = [Toybox,4,6,12]; @symbol_usingdef<1> = [Time,4,13,17]; ]
+using Toybox.Time;
+[ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc"; @line = 6; @symbol_classdef = [SimpleWatchFaceView,6,6,25]; @symbol_extends<0> = [WatchUi,6,34,41]; @symbol_extends<1> = [WatchFace,6,42,51]; ]
+class SimpleWatchFaceView extends WatchUi.WatchFace {
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc"; @line = 6; ]
+    <init> {
+    }
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc"; @line = 6; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc"; @line = 7; @symbol_functiondef = [initialize,7,13,23]; ]
+    function initialize() as Void {
+_Users_konrad_maedler_VsCodeProjects_Garmin_SimpleWatchFace_source_SimpleWatchFaceView_mc_7_26_9_4_start:
+[ "/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc" 8 8 ]
+        symbol [ WatchFace %tmp.2 8 8 17 ];
+        %tmp.2 = getv ? :WatchFace;
+        symbol [ initialize %tmp.3 8 18 28 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_konrad_maedler_VsCodeProjects_Garmin_SimpleWatchFace_source_SimpleWatchFaceView_mc_7_26_9_4_stop:
+    }
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc"; @line = 11; @symbol_functiondef = [onLayout,11,13,21]; @symbol_param<0> = [dc,11,22,24]; ]
+    function onLayout(dc) {
+    }
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc"; @line = 14; @symbol_functiondef = [onUpdate,14,13,21]; @symbol_param<0> = [dc,14,22,24]; ]
+    function onUpdate(dc) {
+_Users_konrad_maedler_VsCodeProjects_Garmin_SimpleWatchFace_source_SimpleWatchFaceView_mc_14_26_26_4_start:
+[ "/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc" 15 8 ]
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 15 8 10 ];
+        symbol [ setColor %tmp.2 15 11 19 ];
+        %tmp.2 = getv function %tmp.1 :setColor;
+        symbol [ Graphics %tmp.3 15 20 28 ];
+        %tmp.3 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.4 15 29 40 ];
+        %tmp.4 = getv %tmp.3 :COLOR_BLACK;
+        symbol [ Graphics %tmp.5 15 42 50 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.6 15 51 62 ];
+        %tmp.6 = getv %tmp.5 :COLOR_BLACK;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc" 16 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 16 8 10 ];
+        symbol [ clear %tmp.8 16 11 16 ];
+        %tmp.8 = getv function %tmp.7 :clear;
+        invoke %tmp.7 %tmp.8();
+[ "/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc" 18 8 ]
+        [ "_Users_konrad_maedler_VsCodeProjects_Garmin_SimpleWatchFace_source_SimpleWatchFaceView_mc_14_26_26_4_start" "_Users_konrad_maedler_VsCodeProjects_Garmin_SimpleWatchFace_source_SimpleWatchFaceView_mc_14_26_26_4_stop" ]
+        %clockTime.1 = local;
+        symbol [ clockTime %clockTime.1 18 12 21 ];
+        symbol [ System %tmp.9 18 24 30 ];
+        %tmp.9 = getm $.Toybox.System;
+        symbol [ getClockTime %tmp.10 18 31 43 ];
+        %tmp.10 = getv function %tmp.9 :getClockTime;
+        %tmp.11 = invoke %tmp.9 %tmp.10();
+        lputv %clockTime.1 %tmp.11;
+        symbol [ clockTime %clockTime.1 18 12 21 ];
+[ "/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc" 19 8 ]
+        [ "_Users_konrad_maedler_VsCodeProjects_Garmin_SimpleWatchFace_source_SimpleWatchFaceView_mc_14_26_26_4_start" "_Users_konrad_maedler_VsCodeProjects_Garmin_SimpleWatchFace_source_SimpleWatchFaceView_mc_14_26_26_4_stop" ]
+        %timeString.2 = local;
+        symbol [ timeString %timeString.2 19 12 22 ];
+        symbol [ Lang %tmp.13 19 25 29 ];
+        %tmp.13 = getv ? :Lang;
+        symbol [ format %tmp.14 19 30 36 ];
+        %tmp.14 = getv function %tmp.13 :format;
+        %tmp.15 = "$1$:$2$";
+        %tmp.16 = newa 2;
+        %tmp.17 = lgetv %clockTime.1;
+        symbol [ clockTime %tmp.17 20 12 21 ];
+        symbol [ hour %tmp.18 20 22 26 ];
+        %tmp.18 = getv %tmp.17 :hour;
+        symbol [ format %tmp.19 20 27 33 ];
+        %tmp.19 = getv function %tmp.18 :format;
+        %tmp.20 = "%02d";
+        %tmp.21 = invoke %tmp.18 %tmp.19(%tmp.20);
+        %tmp.22 = dup %tmp.16;
+        %tmp.23 = aputv %tmp.22 0 %tmp.21;
+        %tmp.24 = lgetv %clockTime.1;
+        symbol [ clockTime %tmp.24 21 12 21 ];
+        symbol [ min %tmp.25 21 22 25 ];
+        %tmp.25 = getv %tmp.24 :min;
+        symbol [ format %tmp.26 21 26 32 ];
+        %tmp.26 = getv function %tmp.25 :format;
+        %tmp.27 = "%02d";
+        %tmp.28 = invoke %tmp.25 %tmp.26(%tmp.27);
+        %tmp.29 = dup %tmp.23;
+        %tmp.30 = aputv %tmp.29 1 %tmp.28;
+        %tmp.31 = invoke %tmp.13 %tmp.14(%tmp.15, %tmp.30);
+        lputv %timeString.2 %tmp.31;
+        symbol [ timeString %timeString.2 19 12 22 ];
+[ "/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc" 24 8 ]
+        %tmp.32 = lgetv %dc;
+        symbol [ dc %tmp.32 24 8 10 ];
+        symbol [ setColor %tmp.33 24 11 19 ];
+        %tmp.33 = getv function %tmp.32 :setColor;
+        symbol [ Graphics %tmp.34 24 20 28 ];
+        %tmp.34 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.35 24 29 40 ];
+        %tmp.35 = getv %tmp.34 :COLOR_WHITE;
+        symbol [ Graphics %tmp.36 24 42 50 ];
+        %tmp.36 = getm $.Toybox.Graphics;
+        symbol [ COLOR_TRANSPARENT %tmp.37 24 51 68 ];
+        %tmp.37 = getv %tmp.36 :COLOR_TRANSPARENT;
+        invoke %tmp.32 %tmp.33(%tmp.35, %tmp.37);
+[ "/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc" 25 8 ]
+        %tmp.38 = lgetv %dc;
+        symbol [ dc %tmp.38 25 8 10 ];
+        symbol [ drawText %tmp.39 25 11 19 ];
+        %tmp.39 = getv function %tmp.38 :drawText;
+        %tmp.40 = lgetv %dc;
+        symbol [ dc %tmp.40 25 20 22 ];
+        symbol [ getWidth %tmp.41 25 23 31 ];
+        %tmp.41 = getv function %tmp.40 :getWidth;
+        %tmp.42 = invoke %tmp.40 %tmp.41();
+        %tmp.43 = 2;
+        %tmp.44 = div %tmp.42 %tmp.43;
+        %tmp.45 = lgetv %dc;
+        symbol [ dc %tmp.45 25 37 39 ];
+        symbol [ getHeight %tmp.46 25 40 49 ];
+        %tmp.46 = getv function %tmp.45 :getHeight;
+        %tmp.47 = invoke %tmp.45 %tmp.46();
+        %tmp.48 = 2;
+        %tmp.49 = div %tmp.47 %tmp.48;
+        symbol [ Graphics %tmp.50 25 55 63 ];
+        %tmp.50 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.51 25 64 74 ];
+        %tmp.51 = getv %tmp.50 :FONT_LARGE;
+        %tmp.52 = lgetv %timeString.2;
+        symbol [ timeString %tmp.52 25 76 86 ];
+        symbol [ Graphics %tmp.53 25 88 96 ];
+        %tmp.53 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.54 25 97 116 ];
+        %tmp.54 = getv %tmp.53 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.38 %tmp.39(%tmp.44, %tmp.49, %tmp.51, %tmp.52, %tmp.54);
+_Users_konrad_maedler_VsCodeProjects_Garmin_SimpleWatchFace_source_SimpleWatchFaceView_mc_14_26_26_4_stop:
+    }
+}
+[ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc"; @line = 1; ]
+<init> {
+}

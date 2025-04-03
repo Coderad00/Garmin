@@ -1,0 +1,38 @@
+[ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherRequest.mc"; @line = 1; @symbol_usingdef<0> = [Toybox,1,6,12]; @symbol_usingdef<1> = [Communications,1,13,27]; @symbol_usingAlias = [Comm,1,31,35]; ]
+using Toybox.Communications as :Comm;
+[ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherRequest.mc"; @line = 2; @symbol_usingdef<0> = [Toybox,2,6,12]; @symbol_usingdef<1> = [WatchUi,2,13,20]; @symbol_usingAlias = [Ui,2,24,26]; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherRequest.mc"; @line = 3; @symbol_usingdef<0> = [Toybox,3,6,12]; @symbol_usingdef<1> = [System,3,13,19]; ]
+using Toybox.System;
+[ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherRequest.mc"; @line = 7; @symbol_classdef = [WeatherRequest,7,6,20]; ]
+class WeatherRequest {
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherRequest.mc"; @line = 7; ]
+    <init> {
+    }
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherRequest.mc"; @line = 7; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherRequest.mc"; @line = 8; @symbol_functiondef = [initialize,8,13,23]; @symbol_param<0> = [view,8,24,28]; ]
+    function initialize(view) as Void {
+    }
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherRequest.mc"; @line = 12; @symbol_functiondef = [makeRequest,12,13,24]; ]
+    function makeRequest() {
+_Users_konrad_maedler_VsCodeProjects_Garmin_wetherWatchFace_src_WeatherRequest_mc_12_27_15_4_start:
+[ "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherRequest.mc" 14 8 ]
+        %tmp.1 = false;
+        ret %tmp.1;
+_Users_konrad_maedler_VsCodeProjects_Garmin_wetherWatchFace_src_WeatherRequest_mc_12_27_15_4_stop:
+    }
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherRequest.mc"; @line = 17; @symbol_functiondef = [getLocation,17,13,24]; ]
+    function getLocation() {
+_Users_konrad_maedler_VsCodeProjects_Garmin_wetherWatchFace_src_WeatherRequest_mc_17_27_20_4_start:
+[ "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherRequest.mc" 19 8 ]
+        %tmp.1 = null;
+        ret %tmp.1;
+_Users_konrad_maedler_VsCodeProjects_Garmin_wetherWatchFace_src_WeatherRequest_mc_17_27_20_4_stop:
+    }
+}
+[ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherRequest.mc"; @line = 1; ]
+<init> {
+}

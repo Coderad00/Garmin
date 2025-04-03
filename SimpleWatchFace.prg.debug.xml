@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc" id="1" lineNum="6" parent="globals/SimpleWatchFaceView" pc="268435460" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/gen/006-B3943-00/source/Rez.mcgen" id="2" lineNum="7" parent="globals/Rez" pc="268435472" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceApp.mc" id="3" lineNum="3" parent="globals/SimpleWatchFaceApp" pc="268435492" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc" id="4" lineNum="11" parent="globals/SimpleWatchFaceView" pc="268435504" symbol="onLayout"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc" id="5" lineNum="7" parent="globals/SimpleWatchFaceView" pc="268435507" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc" id="5" lineNum="8" parent="globals/SimpleWatchFaceView" pc="268435509" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc" id="6" lineNum="14" parent="globals/SimpleWatchFaceView" pc="268435522" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc" id="6" lineNum="15" parent="globals/SimpleWatchFaceView" pc="268435525" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc" id="6" lineNum="16" parent="globals/SimpleWatchFaceView" pc="268435537" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc" id="6" lineNum="18" parent="globals/SimpleWatchFaceView" pc="268435545" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc" id="6" lineNum="19" parent="globals/SimpleWatchFaceView" pc="268435557" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc" id="6" lineNum="24" parent="globals/SimpleWatchFaceView" pc="268435624" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceView.mc" id="6" lineNum="25" parent="globals/SimpleWatchFaceView" pc="268435641" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceApp.mc" id="7" lineNum="8" parent="globals/SimpleWatchFaceApp" pc="268435678" symbol="onStart"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceApp.mc" id="8" lineNum="14" parent="globals/SimpleWatchFaceApp" pc="268435681" symbol="getInitialView"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceApp.mc" id="8" lineNum="15" parent="globals/SimpleWatchFaceApp" pc="268435683" symbol="getInitialView"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceApp.mc" id="9" lineNum="4" parent="globals/SimpleWatchFaceApp" pc="268435713" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceApp.mc" id="9" lineNum="5" parent="globals/SimpleWatchFaceApp" pc="268435715" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/SimpleWatchFace/source/SimpleWatchFaceApp.mc" id="10" lineNum="11" parent="globals/SimpleWatchFaceApp" pc="268435728" symbol="onStop"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry id="5" object="true" symbol="SimpleWatchFaceApp"/>
+        <entry field="true" id="8" symbol="AppName"/>
+        <entry id="4" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry id="8389122" method="true" symbol="onLayout"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="8388644" module="true" symbol="System"/>
+        <entry id="8388645" module="true" symbol="Time"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry field="true" id="7" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry id="6" object="true" symbol="SimpleWatchFaceView"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268435677" name="dc" stackId="1" startPc="268435522"/>
+        <entry endPc="268435676" name="clockTime" stackId="2" startPc="268435525"/>
+        <entry endPc="268435676" name="timeString" stackId="3" startPc="268435525"/>
+    </localVars>
+    <deviceInfo deviceVersion="6dcd7b8e5f5b4076e877ee6ed9889becbccbd260" partNumber="006-B3943-00"/>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="49" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/SimpleWatchFaceView" offset="107" parentId="globals" symbolId="SimpleWatchFaceView" type="class"/>
+        <dataEntry label="globals/Rez" offset="169" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/SimpleWatchFaceApp" offset="213" parentId="globals" symbolId="SimpleWatchFaceApp" type="class"/>
+        <dataEntry label="globals/Rez/Drawables" offset="284" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="319" parentId="Rez" symbolId="Strings" type="module"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" endPc="268435471" name="&lt;init&gt;" parent="SimpleWatchFaceView" startPc="268435460">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435491" name="&lt;init&gt;" parent="Rez" startPc="268435472">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435503" name="&lt;init&gt;" parent="SimpleWatchFaceApp" startPc="268435492">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435506" name="onLayout" parent="SimpleWatchFaceView" startPc="268435504">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435521" name="initialize" parent="SimpleWatchFaceView" startPc="268435507">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435677" name="onUpdate" parent="SimpleWatchFaceView" startPc="268435522">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435680" name="onStart" parent="SimpleWatchFaceApp" startPc="268435678">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435712" name="getInitialView" parent="SimpleWatchFaceApp" startPc="268435681">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435727" name="initialize" parent="SimpleWatchFaceApp" startPc="268435713">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435730" name="onStop" parent="SimpleWatchFaceApp" startPc="268435728">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>

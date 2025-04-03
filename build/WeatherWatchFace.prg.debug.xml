@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherView.mc" id="1" lineNum="6" parent="globals/WeatherView" pc="268435460" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="2" lineNum="12" parent="globals/WetherWatchFace" pc="268435472" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/build/gen/006-B4257-00/source/Rez.mcgen" id="3" lineNum="7" parent="globals/Rez" pc="268435484" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/SimpleWatchApp.mc" id="4" lineNum="4" parent="globals/SimpleWatchApp" pc="268435504" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherView.mc" id="5" lineNum="7" parent="globals/WeatherView" pc="268435516" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherView.mc" id="5" lineNum="8" parent="globals/WeatherView" pc="268435518" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherView.mc" id="6" lineNum="11" parent="globals/WeatherView" pc="268435531" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="7" lineNum="57" parent="globals/WetherWatchFace" pc="268435534" symbol="onExitSleep"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="7" lineNum="59" parent="globals/WetherWatchFace" pc="268435536" symbol="onExitSleep"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="8" lineNum="259" parent="globals/WetherWatchFace" pc="268435544" symbol="drawSimpleWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="8" lineNum="261" parent="globals/WetherWatchFace" pc="268435546" symbol="drawSimpleWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="8" lineNum="265" parent="globals/WetherWatchFace" pc="268435562" symbol="drawSimpleWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="8" lineNum="267" parent="globals/WetherWatchFace" pc="268435578" symbol="drawSimpleWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="8" lineNum="268" parent="globals/WetherWatchFace" pc="268435600" symbol="drawSimpleWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="8" lineNum="269" parent="globals/WetherWatchFace" pc="268435622" symbol="drawSimpleWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="8" lineNum="271" parent="globals/WetherWatchFace" pc="268435644" symbol="drawSimpleWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="8" lineNum="274" parent="globals/WetherWatchFace" pc="268435665" symbol="drawSimpleWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="8" lineNum="275" parent="globals/WetherWatchFace" pc="268435681" symbol="drawSimpleWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="9" lineNum="300" parent="globals/WetherWatchFace" pc="268435711" symbol="getStepsColor"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="9" lineNum="302" parent="globals/WetherWatchFace" pc="268435713" symbol="getStepsColor"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="10" lineNum="52" parent="globals/WetherWatchFace" pc="268435719" symbol="onShow"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="10" lineNum="54" parent="globals/WetherWatchFace" pc="268435721" symbol="onShow"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="11" lineNum="48" parent="globals/WetherWatchFace" pc="268435729" symbol="onLayout"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="12" lineNum="143" parent="globals/WetherWatchFace" pc="268435732" symbol="drawElephantImage"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="12" lineNum="144" parent="globals/WetherWatchFace" pc="268435735" symbol="drawElephantImage"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="12" lineNum="145" parent="globals/WetherWatchFace" pc="268435744" symbol="drawElephantImage"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="12" lineNum="146" parent="globals/WetherWatchFace" pc="268435757" symbol="drawElephantImage"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="12" lineNum="149" parent="globals/WetherWatchFace" pc="268435770" symbol="drawElephantImage"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="12" lineNum="150" parent="globals/WetherWatchFace" pc="268435785" symbol="drawElephantImage"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="12" lineNum="153" parent="globals/WetherWatchFace" pc="268435792" symbol="drawElephantImage"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="12" lineNum="154" parent="globals/WetherWatchFace" pc="268435799" symbol="drawElephantImage"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="12" lineNum="157" parent="globals/WetherWatchFace" pc="268435806" symbol="drawElephantImage"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="12" lineNum="158" parent="globals/WetherWatchFace" pc="268435813" symbol="drawElephantImage"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="12" lineNum="161" parent="globals/WetherWatchFace" pc="268435820" symbol="drawElephantImage"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="184" parent="globals/WetherWatchFace" pc="268435849" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="185" parent="globals/WetherWatchFace" pc="268435852" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="188" parent="globals/WetherWatchFace" pc="268435870" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="191" parent="globals/WetherWatchFace" pc="268435889" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="192" parent="globals/WetherWatchFace" pc="268435913" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="195" parent="globals/WetherWatchFace" pc="268435922" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="196" parent="globals/WetherWatchFace" pc="268435934" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="197" parent="globals/WetherWatchFace" pc="268435942" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="198" parent="globals/WetherWatchFace" pc="268435951" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="201" parent="globals/WetherWatchFace" pc="268435963" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="202" parent="globals/WetherWatchFace" pc="268435993" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="206" parent="globals/WetherWatchFace" pc="268436021" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="207" parent="globals/WetherWatchFace" pc="268436036" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="208" parent="globals/WetherWatchFace" pc="268436046" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="210" parent="globals/WetherWatchFace" pc="268436053" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="211" parent="globals/WetherWatchFace" pc="268436062" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="219" parent="globals/WetherWatchFace" pc="268436135" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="220" parent="globals/WetherWatchFace" pc="268436156" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="221" parent="globals/WetherWatchFace" pc="268436177" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="222" parent="globals/WetherWatchFace" pc="268436198" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="223" parent="globals/WetherWatchFace" pc="268436228" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="227" parent="globals/WetherWatchFace" pc="268436258" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="228" parent="globals/WetherWatchFace" pc="268436270" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="13" lineNum="231" parent="globals/WetherWatchFace" pc="268436304" symbol="updateWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="14" lineNum="166" parent="globals/WetherWatchFace" pc="268436319" symbol="drawArc"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="14" lineNum="167" parent="globals/WetherWatchFace" pc="268436322" symbol="drawArc"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="14" lineNum="168" parent="globals/WetherWatchFace" pc="268436329" symbol="drawArc"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="14" lineNum="171" parent="globals/WetherWatchFace" pc="268436336" symbol="drawArc"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="14" lineNum="172" parent="globals/WetherWatchFace" pc="268436352" symbol="drawArc"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="14" lineNum="173" parent="globals/WetherWatchFace" pc="268436364" symbol="drawArc"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="14" lineNum="176" parent="globals/WetherWatchFace" pc="268436386" symbol="drawArc"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="14" lineNum="177" parent="globals/WetherWatchFace" pc="268436393" symbol="drawArc"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="14" lineNum="178" parent="globals/WetherWatchFace" pc="268436407" symbol="drawArc"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="14" lineNum="179" parent="globals/WetherWatchFace" pc="268436419" symbol="drawArc"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="15" lineNum="305" parent="globals/WetherWatchFace" pc="268436448" symbol="getBatteryColor"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="15" lineNum="306" parent="globals/WetherWatchFace" pc="268436450" symbol="getBatteryColor"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="15" lineNum="307" parent="globals/WetherWatchFace" pc="268436458" symbol="getBatteryColor"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="15" lineNum="308" parent="globals/WetherWatchFace" pc="268436466" symbol="getBatteryColor"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="15" lineNum="309" parent="globals/WetherWatchFace" pc="268436474" symbol="getBatteryColor"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="15" lineNum="311" parent="globals/WetherWatchFace" pc="268436483" symbol="getBatteryColor"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="16" lineNum="279" parent="globals/WetherWatchFace" pc="268436490" symbol="getWeatherIcon"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="16" lineNum="280" parent="globals/WetherWatchFace" pc="268436492" symbol="getWeatherIcon"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="16" lineNum="281" parent="globals/WetherWatchFace" pc="268436499" symbol="getWeatherIcon"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="16" lineNum="282" parent="globals/WetherWatchFace" pc="268436508" symbol="getWeatherIcon"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="16" lineNum="283" parent="globals/WetherWatchFace" pc="268436516" symbol="getWeatherIcon"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="16" lineNum="284" parent="globals/WetherWatchFace" pc="268436525" symbol="getWeatherIcon"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="16" lineNum="286" parent="globals/WetherWatchFace" pc="268436541" symbol="getWeatherIcon"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="16" lineNum="287" parent="globals/WetherWatchFace" pc="268436550" symbol="getWeatherIcon"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="16" lineNum="289" parent="globals/WetherWatchFace" pc="268436566" symbol="getWeatherIcon"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="16" lineNum="290" parent="globals/WetherWatchFace" pc="268436575" symbol="getWeatherIcon"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="16" lineNum="291" parent="globals/WetherWatchFace" pc="268436583" symbol="getWeatherIcon"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="16" lineNum="292" parent="globals/WetherWatchFace" pc="268436592" symbol="getWeatherIcon"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="16" lineNum="293" parent="globals/WetherWatchFace" pc="268436600" symbol="getWeatherIcon"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="16" lineNum="295" parent="globals/WetherWatchFace" pc="268436609" symbol="getWeatherIcon"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="17" lineNum="236" parent="globals/WetherWatchFace" pc="268436616" symbol="drawWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="17" lineNum="237" parent="globals/WetherWatchFace" pc="268436619" symbol="drawWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="17" lineNum="238" parent="globals/WetherWatchFace" pc="268436628" symbol="drawWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="17" lineNum="242" parent="globals/WetherWatchFace" pc="268436632" symbol="drawWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="17" lineNum="245" parent="globals/WetherWatchFace" pc="268436648" symbol="drawWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="17" lineNum="246" parent="globals/WetherWatchFace" pc="268436664" symbol="drawWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="17" lineNum="247" parent="globals/WetherWatchFace" pc="268436683" symbol="drawWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="17" lineNum="248" parent="globals/WetherWatchFace" pc="268436705" symbol="drawWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="17" lineNum="251" parent="globals/WetherWatchFace" pc="268436726" symbol="drawWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="17" lineNum="252" parent="globals/WetherWatchFace" pc="268436746" symbol="drawWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="17" lineNum="253" parent="globals/WetherWatchFace" pc="268436752" symbol="drawWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="17" lineNum="254" parent="globals/WetherWatchFace" pc="268436774" symbol="drawWeather"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="18" lineNum="20" parent="globals/WetherWatchFace" pc="268436804" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="18" lineNum="21" parent="globals/WetherWatchFace" pc="268436807" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="18" lineNum="22" parent="globals/WetherWatchFace" pc="268436823" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="18" lineNum="23" parent="globals/WetherWatchFace" pc="268436831" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="18" lineNum="26" parent="globals/WetherWatchFace" pc="268436860" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="18" lineNum="27" parent="globals/WetherWatchFace" pc="268436877" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="18" lineNum="30" parent="globals/WetherWatchFace" pc="268436889" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="18" lineNum="40" parent="globals/WetherWatchFace" pc="268436925" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="18" lineNum="41" parent="globals/WetherWatchFace" pc="268436963" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="18" lineNum="42" parent="globals/WetherWatchFace" pc="268436987" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="18" lineNum="43" parent="globals/WetherWatchFace" pc="268436991" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="18" lineNum="44" parent="globals/WetherWatchFace" pc="268437017" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="62" parent="globals/WetherWatchFace" pc="268437038" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="64" parent="globals/WetherWatchFace" pc="268437041" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="65" parent="globals/WetherWatchFace" pc="268437053" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="68" parent="globals/WetherWatchFace" pc="268437061" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="69" parent="globals/WetherWatchFace" pc="268437070" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="70" parent="globals/WetherWatchFace" pc="268437079" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="71" parent="globals/WetherWatchFace" pc="268437086" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="74" parent="globals/WetherWatchFace" pc="268437093" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="75" parent="globals/WetherWatchFace" pc="268437106" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="78" parent="globals/WetherWatchFace" pc="268437128" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="79" parent="globals/WetherWatchFace" pc="268437144" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="80" parent="globals/WetherWatchFace" pc="268437156" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="83" parent="globals/WetherWatchFace" pc="268437178" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="84" parent="globals/WetherWatchFace" pc="268437190" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="85" parent="globals/WetherWatchFace" pc="268437198" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="86" parent="globals/WetherWatchFace" pc="268437206" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="87" parent="globals/WetherWatchFace" pc="268437234" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="88" parent="globals/WetherWatchFace" pc="268437245" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="92" parent="globals/WetherWatchFace" pc="268437255" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="93" parent="globals/WetherWatchFace" pc="268437272" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="94" parent="globals/WetherWatchFace" pc="268437284" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="95" parent="globals/WetherWatchFace" pc="268437292" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="102" parent="globals/WetherWatchFace" pc="268437322" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="103" parent="globals/WetherWatchFace" pc="268437338" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="104" parent="globals/WetherWatchFace" pc="268437345" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="105" parent="globals/WetherWatchFace" pc="268437375" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="107" parent="globals/WetherWatchFace" pc="268437410" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="110" parent="globals/WetherWatchFace" pc="268437433" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="111" parent="globals/WetherWatchFace" pc="268437450" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="112" parent="globals/WetherWatchFace" pc="268437462" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="113" parent="globals/WetherWatchFace" pc="268437470" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="114" parent="globals/WetherWatchFace" pc="268437478" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="117" parent="globals/WetherWatchFace" pc="268437515" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="122" parent="globals/WetherWatchFace" pc="268437538" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="123" parent="globals/WetherWatchFace" pc="268437555" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="124" parent="globals/WetherWatchFace" pc="268437567" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="125" parent="globals/WetherWatchFace" pc="268437585" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="128" parent="globals/WetherWatchFace" pc="268437619" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="131" parent="globals/WetherWatchFace" pc="268437642" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="132" parent="globals/WetherWatchFace" pc="268437659" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WetherWatchFace.mc" id="19" lineNum="134" parent="globals/WetherWatchFace" pc="268437668" symbol="onUpdate"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherRequest.mc" id="20" lineNum="17" parent="globals/WeatherRequest" pc="268437692" symbol="getLocation"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherRequest.mc" id="20" lineNum="19" parent="globals/WeatherRequest" pc="268437694" symbol="getLocation"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherRequest.mc" id="21" lineNum="8" parent="globals/WeatherRequest" pc="268437696" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherRequest.mc" id="22" lineNum="12" parent="globals/WeatherRequest" pc="268437699" symbol="makeRequest"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherRequest.mc" id="22" lineNum="14" parent="globals/WeatherRequest" pc="268437701" symbol="makeRequest"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/SimpleWatchApp.mc" id="23" lineNum="10" parent="globals/SimpleWatchApp" pc="268437703" symbol="onStart"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/SimpleWatchApp.mc" id="24" lineNum="18" parent="globals/SimpleWatchApp" pc="268437706" symbol="getInitialView"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/SimpleWatchApp.mc" id="24" lineNum="19" parent="globals/SimpleWatchApp" pc="268437708" symbol="getInitialView"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/SimpleWatchApp.mc" id="25" lineNum="6" parent="globals/SimpleWatchApp" pc="268437738" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/SimpleWatchApp.mc" id="25" lineNum="7" parent="globals/SimpleWatchApp" pc="268437740" symbol="initialize"/>
+        <entry filename="/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/SimpleWatchApp.mc" id="26" lineNum="14" parent="globals/SimpleWatchApp" pc="268437753" symbol="onStop"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry field="true" id="8391606" symbol="CONDITION_CLEAR"/>
+        <entry field="true" id="26" symbol="PhpElephantImage"/>
+        <entry id="21" method="true" symbol="getStepsColor"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry id="19" method="true" symbol="drawWeather"/>
+        <entry field="true" id="8391659" symbol="CONDITION_UNKNOWN"/>
+        <entry field="true" id="30" symbol="Steps"/>
+        <entry field="true" id="16" symbol="&lt;globals/WetherWatchFace/&lt;&gt;_weatherTimer&gt;"/>
+        <entry field="true" id="13" symbol="&lt;globals/WetherWatchFace/&lt;&gt;_lowPowerMode&gt;"/>
+        <entry id="22" method="true" symbol="getWeatherIcon"/>
+        <entry field="true" id="8391637" symbol="CONDITION_DRIZZLE"/>
+        <entry id="8388924" module="true" symbol="Gregorian"/>
+        <entry field="true" id="15" symbol="&lt;globals/WetherWatchFace/&lt;&gt;_weatherData&gt;"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="29" symbol="LoadingWeather"/>
+        <entry id="8390575" method="true" symbol="getLocation"/>
+        <entry field="true" id="27" symbol="AppName"/>
+        <entry id="4" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="17" method="true" symbol="drawElephantImage"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry field="true" id="8391626" symbol="CONDITION_CLOUDY"/>
+        <entry id="8389687" method="true" symbol="drawArc"/>
+        <entry field="true" id="8391607" symbol="CONDITION_PARTLY_CLOUDY"/>
+        <entry id="10" object="true" symbol="WetherWatchFace"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry field="true" id="14" symbol="&lt;globals/WetherWatchFace/&lt;&gt;_prevTemperature&gt;"/>
+        <entry id="8389122" method="true" symbol="onLayout"/>
+        <entry id="24" method="true" symbol="makeRequest"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry field="true" id="8391608" symbol="CONDITION_MOSTLY_CLOUDY"/>
+        <entry id="8389377" method="true" symbol="onExitSleep"/>
+        <entry field="true" id="28" symbol="ElephantHint"/>
+        <entry id="8388644" module="true" symbol="System"/>
+        <entry id="6" object="true" symbol="SimpleWatchApp"/>
+        <entry id="8388645" module="true" symbol="Time"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry id="18" method="true" symbol="drawSimpleWeather"/>
+        <entry id="5" module="true" symbol="globals/WeatherConditions"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry field="true" id="8391609" symbol="CONDITION_RAIN"/>
+        <entry field="true" id="25" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="8389123" method="true" symbol="onShow"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry id="7" module="true" symbol="WeatherConditions"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry id="8" object="true" symbol="WeatherRequest"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry field="true" id="8391610" symbol="CONDITION_SNOW"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry field="true" id="12" symbol="&lt;globals/WetherWatchFace/&lt;&gt;_lastWeatherUpdate&gt;"/>
+        <entry id="23" method="true" symbol="updateWeather"/>
+        <entry field="true" id="11" symbol="&lt;globals/WetherWatchFace/&lt;&gt;_elephantBitmap&gt;"/>
+        <entry id="8388646" module="true" object="true" symbol="Timer"/>
+        <entry id="9" object="true" symbol="WeatherView"/>
+        <entry field="true" id="8391612" symbol="CONDITION_THUNDERSTORMS"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+        <entry id="20" method="true" symbol="getBatteryColor"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268435710" name="dc" stackId="1" startPc="268435544"/>
+        <entry arg="true" endPc="268435710" name="x" stackId="2" startPc="268435544"/>
+        <entry arg="true" endPc="268435710" name="y" stackId="3" startPc="268435544"/>
+        <entry arg="true" endPc="268435718" name="percent" stackId="1" startPc="268435711"/>
+        <entry arg="true" endPc="268435848" name="dc" stackId="1" startPc="268435732"/>
+        <entry arg="true" endPc="268435848" name="centerX" stackId="2" startPc="268435732"/>
+        <entry arg="true" endPc="268435848" name="centerY" stackId="3" startPc="268435732"/>
+        <entry endPc="268435844" name="imageWidth" stackId="4" startPc="268435744"/>
+        <entry endPc="268435844" name="imageHeight" stackId="5" startPc="268435744"/>
+        <entry endPc="268435844" name="maxWidth" stackId="6" startPc="268435744"/>
+        <entry endPc="268435844" name="scale" stackId="7" startPc="268435744"/>
+        <entry endPc="268435844" name="newWidth" stackId="8" startPc="268435744"/>
+        <entry endPc="268435844" name="newHeight" stackId="9" startPc="268435744"/>
+        <entry endPc="268435844" name="posX" stackId="10" startPc="268435744"/>
+        <entry endPc="268435844" name="posY" stackId="11" startPc="268435744"/>
+        <entry endPc="268436317" name="currentTime" stackId="1" startPc="268435852"/>
+        <entry endPc="268436317" name="updateInterval" stackId="2" startPc="268435852"/>
+        <entry endPc="268436314" name="sysStats" stackId="3" startPc="268435913"/>
+        <entry endPc="268436314" name="battery" stackId="4" startPc="268435913"/>
+        <entry endPc="268436314" name="batteryInt" stackId="5" startPc="268435913"/>
+        <entry endPc="268436314" name="seed" stackId="6" startPc="268435913"/>
+        <entry endPc="268436314" name="temperature" stackId="7" startPc="268435913"/>
+        <entry endPc="268436314" name="condition" stackId="8" startPc="268435913"/>
+        <entry arg="true" endPc="268436447" name="dc" stackId="1" startPc="268436319"/>
+        <entry arg="true" endPc="268436447" name="centerX" stackId="2" startPc="268436319"/>
+        <entry arg="true" endPc="268436447" name="centerY" stackId="3" startPc="268436319"/>
+        <entry arg="true" endPc="268436447" name="radius" stackId="4" startPc="268436319"/>
+        <entry arg="true" endPc="268436447" name="startDegree" stackId="5" startPc="268436319"/>
+        <entry arg="true" endPc="268436447" name="endDegree" stackId="6" startPc="268436319"/>
+        <entry arg="true" endPc="268436447" name="width" stackId="7" startPc="268436319"/>
+        <entry arg="true" endPc="268436447" name="color" stackId="8" startPc="268436319"/>
+        <entry arg="true" endPc="268436447" name="fillPercent" stackId="9" startPc="268436319"/>
+        <entry endPc="268436446" name="fullArc" stackId="10" startPc="268436322"/>
+        <entry endPc="268436446" name="arc" stackId="11" startPc="268436322"/>
+        <entry arg="true" endPc="268436489" name="batteryLevel" stackId="1" startPc="268436448"/>
+        <entry arg="true" endPc="268436615" name="conditions" stackId="1" startPc="268436490"/>
+        <entry arg="true" endPc="268436803" name="dc" stackId="1" startPc="268436616"/>
+        <entry arg="true" endPc="268436803" name="x" stackId="2" startPc="268436616"/>
+        <entry arg="true" endPc="268436803" name="y" stackId="3" startPc="268436616"/>
+        <entry endPc="268436802" name="temperature" stackId="4" startPc="268436619"/>
+        <entry endPc="268436799" name="tempText" stackId="5" startPc="268436752"/>
+        <entry endPc="268437036" name="battery" stackId="1" startPc="268436807"/>
+        <entry endPc="268437031" name="e" stackId="2" startPc="268436987"/>
+        <entry arg="true" endPc="268437691" name="dc" stackId="1" startPc="268437038"/>
+        <entry endPc="268437690" name="width" stackId="2" startPc="268437041"/>
+        <entry endPc="268437690" name="height" stackId="3" startPc="268437041"/>
+        <entry endPc="268437690" name="centerX" stackId="4" startPc="268437041"/>
+        <entry endPc="268437690" name="centerY" stackId="5" startPc="268437041"/>
+        <entry endPc="268437690" name="activityInfo" stackId="6" startPc="268437041"/>
+        <entry endPc="268437690" name="steps" stackId="7" startPc="268437041"/>
+        <entry endPc="268437690" name="stepGoal" stackId="8" startPc="268437041"/>
+        <entry endPc="268437690" name="stepPercent" stackId="9" startPc="268437041"/>
+        <entry endPc="268437690" name="arcLength" stackId="10" startPc="268437041"/>
+        <entry endPc="268437690" name="tempText" stackId="11" startPc="268437041"/>
+        <entry endPc="268437690" name="clockTime" stackId="12" startPc="268437041"/>
+        <entry endPc="268437690" name="hour" stackId="13" startPc="268437041"/>
+        <entry endPc="268437690" name="minute" stackId="14" startPc="268437041"/>
+        <entry endPc="268437690" name="timeString" stackId="15" startPc="268437041"/>
+        <entry endPc="268437690" name="now" stackId="16" startPc="268437041"/>
+        <entry endPc="268437690" name="info" stackId="17" startPc="268437041"/>
+        <entry endPc="268437690" name="dateString" stackId="18" startPc="268437041"/>
+        <entry endPc="268437690" name="stepsText" stackId="19" startPc="268437041"/>
+    </localVars>
+    <deviceInfo deviceVersion="0ed082a335bbf00c12e5da810e92d4f89288090c" partNumber="006-B4257-00"/>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="LoadingWeather"/>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="PhpElephantImage"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="Steps"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="ElephantHint"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="58" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/WeatherView" offset="143" parentId="globals" symbolId="WeatherView" type="class"/>
+        <dataEntry label="globals/WeatherConditions" offset="196" parentId="globals" symbolId="WeatherConditions" type="module"/>
+        <dataEntry label="globals/WetherWatchFace" offset="222" parentId="globals" symbolId="WetherWatchFace" type="class"/>
+        <dataEntry label="globals/Rez" offset="428" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/WeatherRequest" offset="472" parentId="globals" symbolId="WeatherRequest" type="class"/>
+        <dataEntry label="globals/SimpleWatchApp" offset="534" parentId="globals" symbolId="SimpleWatchApp" type="class"/>
+        <dataEntry label="globals/Rez/Drawables" offset="605" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="649" parentId="Rez" symbolId="Strings" type="module"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" endPc="268435471" name="&lt;init&gt;" parent="WeatherView" startPc="268435460">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="WeatherConditions">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435483" name="&lt;init&gt;" parent="WetherWatchFace" startPc="268435472">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435503" name="&lt;init&gt;" parent="Rez" startPc="268435484">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="WeatherRequest">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435515" name="&lt;init&gt;" parent="SimpleWatchApp" startPc="268435504">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435530" name="initialize" parent="WeatherView" startPc="268435516">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435533" name="onUpdate" parent="WeatherView" startPc="268435531">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435543" name="onExitSleep" parent="WetherWatchFace" startPc="268435534">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435710" name="drawSimpleWeather" parent="WetherWatchFace" startPc="268435544">
+            <param id="dc"/>
+            <param id="x"/>
+            <param id="y"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435718" name="getStepsColor" parent="WetherWatchFace" startPc="268435711">
+            <param id="percent"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435728" name="onShow" parent="WetherWatchFace" startPc="268435719">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435731" name="onLayout" parent="WetherWatchFace" startPc="268435729">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435848" name="drawElephantImage" parent="WetherWatchFace" startPc="268435732">
+            <param id="dc"/>
+            <param id="centerX"/>
+            <param id="centerY"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436318" name="updateWeather" parent="WetherWatchFace" startPc="268435849">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436447" name="drawArc" parent="WetherWatchFace" startPc="268436319">
+            <param id="dc"/>
+            <param id="centerX"/>
+            <param id="centerY"/>
+            <param id="radius"/>
+            <param id="startDegree"/>
+            <param id="endDegree"/>
+            <param id="width"/>
+            <param id="color"/>
+            <param id="fillPercent"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436489" name="getBatteryColor" parent="WetherWatchFace" startPc="268436448">
+            <param id="batteryLevel"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436615" name="getWeatherIcon" parent="WetherWatchFace" startPc="268436490">
+            <param id="conditions"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436803" name="drawWeather" parent="WetherWatchFace" startPc="268436616">
+            <param id="dc"/>
+            <param id="x"/>
+            <param id="y"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437037" name="initialize" parent="WetherWatchFace" startPc="268436804">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437691" name="onUpdate" parent="WetherWatchFace" startPc="268437038">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437695" name="getLocation" parent="WeatherRequest" startPc="268437692">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437698" name="initialize" parent="WeatherRequest" startPc="268437696">
+            <param id="view"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437702" name="makeRequest" parent="WeatherRequest" startPc="268437699">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437705" name="onStart" parent="SimpleWatchApp" startPc="268437703">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437737" name="getInitialView" parent="SimpleWatchApp" startPc="268437706">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437752" name="initialize" parent="SimpleWatchApp" startPc="268437738">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437755" name="onStop" parent="SimpleWatchApp" startPc="268437753">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>

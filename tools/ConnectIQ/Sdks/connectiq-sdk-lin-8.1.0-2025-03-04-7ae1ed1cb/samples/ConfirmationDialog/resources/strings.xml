@@ -1,8 +1,0 @@
-<resources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
-    <string id="AppName">ConfirmationDialog</string>
-    <string id="TestInfo">Press menu or select to\ntest confirmation dialog</string>
-    <string id="DefaultResponse">No response</string>
-    <string id="DialogHeader">Confirm this?</string>
-    <string id="Confirm">Confirm/Yes</string>
-    <string id="Cancel">Cancel/No</string>
-</resources>

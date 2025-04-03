@@ -1,4 +1,0 @@
-<menu id="AuxMenu" title="@Strings.AuxMenuTitle" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
-    <menu-item id="AuxItem1" label="@Strings.AuxMenuLabel1"/>
-    <menu-item id="AuxItem2" label="@Strings.AuxMenuLabel2"/>
-</menu>

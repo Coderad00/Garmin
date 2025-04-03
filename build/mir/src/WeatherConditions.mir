@@ -1,0 +1,27 @@
+[ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherConditions.mc"; @line = 4; @symbol_moduledef = [WeatherConditions,4,7,24]; ]
+module WeatherConditions {
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherConditions.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherConditions.mc"; @line = 5; @position = 10; @symbol_constdef = [CONDITION_CLEAR,5,10,25]; ]
+    const CONDITION_CLEAR = 0;
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherConditions.mc"; @line = 6; @position = 10; @symbol_constdef = [CONDITION_PARTLY_CLOUDY,6,10,33]; ]
+    const CONDITION_PARTLY_CLOUDY = 1;
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherConditions.mc"; @line = 7; @position = 10; @symbol_constdef = [CONDITION_MOSTLY_CLOUDY,7,10,33]; ]
+    const CONDITION_MOSTLY_CLOUDY = 2;
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherConditions.mc"; @line = 8; @position = 10; @symbol_constdef = [CONDITION_CLOUDY,8,10,26]; ]
+    const CONDITION_CLOUDY = 3;
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherConditions.mc"; @line = 9; @position = 10; @symbol_constdef = [CONDITION_RAIN,9,10,24]; ]
+    const CONDITION_RAIN = 4;
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherConditions.mc"; @line = 10; @position = 10; @symbol_constdef = [CONDITION_SNOW,10,10,24]; ]
+    const CONDITION_SNOW = 5;
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherConditions.mc"; @line = 11; @position = 10; @symbol_constdef = [CONDITION_THUNDERSTORMS,11,10,33]; ]
+    const CONDITION_THUNDERSTORMS = 6;
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherConditions.mc"; @line = 12; @position = 10; @symbol_constdef = [CONDITION_DRIZZLE,12,10,27]; ]
+    const CONDITION_DRIZZLE = 7;
+    [ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherConditions.mc"; @line = 13; @position = 10; @symbol_constdef = [CONDITION_UNKNOWN,13,10,27]; ]
+    const CONDITION_UNKNOWN = 8;
+}
+[ @file = "/Users/konrad.maedler/VsCodeProjects/Garmin/wetherWatchFace/src/WeatherConditions.mc"; @line = 4; ]
+<init> {
+}
